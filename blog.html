@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>TEST3</title>
+        <script src="https://unpkg.com/contentful@latest/dist/contentful.min.js"></script>
+        <script src="https://unpkg.com/vue"></script>
+        <script src="https://unpkg.com/vue-resource@1.3.4/dist/vue-resource.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.7.4/showdown.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+         <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <h1>Blog</h1>
+        </header>
+        <main id="app">
+            <article v-for="content in contents">
+                <aside><p class="date" v-if="content.fields.date!=null">{{content.fields.date}}</p></aside>
+                <h2>{{ content.fields.title }}</h2>
+                <div v-html="content.fields.content"></div>
+            </article>
+        </main>
+        <script src="./api.js"></script>
+    </body>
+</html>
