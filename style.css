@@ -42,13 +42,8 @@
 }
 
 main{
-    display: flex;
-    flex-direction:row-reverse;
 }
  #about{
-     width: 200px;
-     flex-shrink: 0;
-     margin-left: 10px;
 }
  #cv-content{
 }
