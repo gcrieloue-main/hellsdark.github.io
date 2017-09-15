@@ -13,10 +13,21 @@ h2{
     font-size:24px;
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
+    color:#01579B;
+}
+#about h2{
+    color:#F44336;
+}
+article{
+    margin-bottom:1em;
 }
 article div{
     line-height: 140%;
     font-size:16px;
+}
+article.workExperience div{
+    border-left:2px solid #64B5F6;
+    padding-left:1em;
 }
 .date{
     position: relative;
@@ -41,9 +52,12 @@ img{
     width: 100%;
 }
 
-main{
+#education ul{
+    list-style-type:none;
+    padding:0;
 }
-#about article div{
-}
-#cv-content{
+
+#education ul li{
+    border-left:2px solid #64B5F6;
+    padding-left:1em;
 }
