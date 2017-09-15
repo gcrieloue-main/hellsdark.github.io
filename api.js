@@ -6,7 +6,9 @@ const client = contentful.createClient({
     accessToken: "fe844e41216f12522cc40b8a179e7c81c8a0f17b797503155ba949afbb6aca96"
 });
 
-var converter = new showdown.Converter({headerLevelStart: 3});
+var converter = new showdown.Converter({headerLevelStart: 4});
+window.sr = ScrollReveal();
+sr.reveal('.workExperience');
 
 function getArticles(){
     return client.getEntries({

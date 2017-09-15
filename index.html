@@ -5,6 +5,7 @@
         <script src="https://unpkg.com/vue"></script>
         <script src="https://unpkg.com/vue-resource@1.3.4/dist/vue-resource.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.7.4/showdown.min.js"></script>
+        <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
         <link rel="stylesheet" href="knacss.css" />
         <link rel="stylesheet" href="style.css" />
@@ -22,7 +23,7 @@
                 </section>
                 <section id="cv-content">
                     <h2>Mex expériences</h2>
-                    <article v-for="content in workExperiences">
+                    <article class="workExperience" v-for="content in workExperiences">
                         <h3>{{ content.fields.title }}</h2>
                         <div v-html="content.fields.description"></div>
                     </article>
