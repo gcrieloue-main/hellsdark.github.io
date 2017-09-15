@@ -7,8 +7,6 @@ const client = contentful.createClient({
 });
 
 var converter = new showdown.Converter({headerLevelStart: 4});
-window.sr = ScrollReveal();
-sr.reveal('.workExperience');
 
 function getArticles(){
     return client.getEntries({
