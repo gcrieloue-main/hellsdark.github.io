@@ -25,7 +25,7 @@ article div{
     line-height: 140%;
     font-size:16px;
 }
-article.workExperience div{
+#workExperiences {
     border-left:2px solid #64B5F6;
     padding-left:1em;
 }
@@ -60,4 +60,17 @@ img{
 #education ul li{
     border-left:2px solid #64B5F6;
     padding-left:1em;
+}
+
+
+.workExperience h3::before{
+    display: inline-block;
+    width:14px;
+    height:14px;
+    border-radius: 14px;
+    content: '';
+    background-color:white;
+    border:2px solid #64B5F6;
+    position:relative;
+    left:-26px;
 }
