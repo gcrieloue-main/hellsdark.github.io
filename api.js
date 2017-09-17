@@ -33,7 +33,6 @@ function getWorkExperiences(){
            order:"-fields.periodBegin"
     })
         .then((response) => response.items.map(function(element){
-        console.log(element);
         element.fields.description=converter.makeHtml(element.fields.description);
         return element
     }))
@@ -48,7 +47,6 @@ function getCvParagraphs(){
         order:"sys.createdAt"
     })
         .then((response) => response.items.map(function(element){
-        console.log(element);
         element.fields.text=converter.makeHtml(element.fields.text);
         return element
     }))
@@ -57,8 +55,8 @@ function getCvParagraphs(){
     })   
 }
 
-var app=new Vue({
-    el:"#app",
+var blog=new Vue({
+    el:"#blog",
     data:{contents:[{fields:{title:''}}]},
     created:function(){
         this.getContent();

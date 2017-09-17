@@ -12,7 +12,7 @@
         <header>
             <h1>Blog</h1>
         </header>
-        <main id="app">
+        <main id="blog">
             <article v-for="content in contents">
                 <aside><p class="date" v-if="content.fields.date!=null">{{content.fields.date}}</p></aside>
                 <h2>{{ content.fields.title }}</h2>
