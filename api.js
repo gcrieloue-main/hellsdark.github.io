@@ -44,7 +44,8 @@ function getWorkExperiences(){
 
 function getCvParagraphs(){
     return client.getEntries({
-        content_type: "paragraph"
+        content_type: "paragraph",
+        order:"sys.createdAt"
     })
         .then((response) => response.items.map(function(element){
         console.log(element);
