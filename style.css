@@ -1,8 +1,13 @@
 body{
     font-family: 'Open Sans', sans-serif;
 }
+@media (min-width: 991px) {
 main{
-    max-width: 800px;
+    max-width: 991px;
+}
+}
+
+main{
     margin:0 auto;
 }
 h1{
