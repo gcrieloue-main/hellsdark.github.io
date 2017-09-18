@@ -36,7 +36,7 @@
                     <h2>Mes expériences</h2>
                     <div id="workExperiences">
                     <article class="workExperience" v-for="content in workExperiences">
-                        <h3>{{ content.fields.title }}</h2>
+                    <h3><span class="period">{{content.fields.begin}} - {{content.fields.end}}</span> : {{ content.fields.title }}</h2>
                         <div v-html="content.fields.description"></div>
                     </article>
                 </div>

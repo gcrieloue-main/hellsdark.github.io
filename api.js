@@ -13,7 +13,6 @@ function getArticles(){
         content_type: "article"
     })
         .then((response) => response.items.map(function(element){
-        console.log(element);
         element.fields.content=converter.makeHtml(element.fields.content);
         var date = new Date(element.fields.date);
         var formattedNumber = ("0" + date.getMonth()).slice(-2);
@@ -33,6 +32,17 @@ function getWorkExperiences(){
            order:"-fields.periodBegin"
     })
         .then((response) => response.items.map(function(element){
+            var begin = new Date(element.fields.periodBegin);
+            var end = new Date(element.fields.periodEnd);
+            var beginDate = ("0" + (begin.getMonth()+1)).slice(-2) + "/" 
+            + ("0" + begin.getYear()).slice(-2);
+        var endDate="Aujourd'hui";
+        if (end<new Date()){
+            endDate = ("0" + (end.getMonth()+1)).slice(-2) + "/" 
+            + ("0" + end.getYear()).slice(-2);
+            }
+            element.fields.begin=beginDate;
+            element.fields.end=endDate;
         element.fields.description=converter.makeHtml(element.fields.description);
         return element
     }))

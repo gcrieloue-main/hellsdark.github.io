@@ -15,7 +15,7 @@ h2{
     font-weight: 100;
     color:#01579B;
 }
-.about a, .about strong{
+a{
     color:#1976D2;
 }
 article{
@@ -29,6 +29,29 @@ article div{
     border-left:2px solid #64B5F6;
     padding-left:1em;
 }
+.workExperience h3{
+    position:relative;
+    line-height:3rem;
+}
+.workExperience .period{
+    color:#607D8B;
+    font-size:2rem;
+}
+
+.workExperience h3::before{
+    display: inline-block;
+    width:14px;
+    height:14px;
+    border-radius: 14px;
+    content: '';
+    background-color:white;
+    border:2px solid #64B5F6;
+    position:absolute;
+    left:-26px;
+    top:8px;
+    margin-right:12px;
+}
+
 #languages ul{
     list-style-type:none;
     padding-left:0.5em;
@@ -72,18 +95,6 @@ img{
 #education ul li{
     border-left:2px solid #64B5F6;
     padding-left:1em;
-}
-
-.workExperience h3::before{
-    display: inline-block;
-    width:14px;
-    height:14px;
-    border-radius: 14px;
-    content: '';
-    background-color:white;
-    border:2px solid #64B5F6;
-    position:relative;
-    left:-26px;
 }
 
 pre{
