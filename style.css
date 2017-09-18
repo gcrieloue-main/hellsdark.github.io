@@ -15,11 +15,9 @@ h2{
     font-weight: 100;
     color:#01579B;
 }
-#about h2{
-    color:#F44336;
-}
-#about a, #about strong{
-    color:#2196F3 !important;
+.about a, .about strong{
+    font-weight:normal;
+    color:#2196F3;
 }
 article{
     margin-bottom:1em;
