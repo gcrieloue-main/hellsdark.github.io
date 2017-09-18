@@ -37,7 +37,7 @@ article div{
     width: 50px;
     border:1px solid #01579B;
     border-radius: 50%;
-    background-color: #BBDEFB;
+    background-color: #ECEFF1;
     display: table-cell;
     /* comportement visuel de cellule */
     vertical-align: middle;
