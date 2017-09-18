@@ -29,6 +29,15 @@ article div{
     border-left:2px solid #64B5F6;
     padding-left:1em;
 }
+#languages ul{
+    list-style-type:none;
+    padding-left:0.5em;
+}
+#languages img{
+    height:1em;
+    margin-right:0.5em;
+    display:inline;
+}
 .date{
     position: relative;
     left:-50px;
