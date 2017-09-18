@@ -35,14 +35,15 @@ article div{
     top:25px;
     height:50px;
     width: 50px;
-    border:1px solid #333;
+    border:1px solid #01579B;
     border-radius: 50%;
-    background-color: #ddd;
+    background-color: #BBDEFB;
     display: table-cell;
     /* comportement visuel de cellule */
     vertical-align: middle;
     text-align: center;
     font-weight: bold;
+    color:#01579B;
 }
 aside {
     border-bottom: 1px solid #ddd;
