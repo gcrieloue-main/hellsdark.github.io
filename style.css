@@ -32,7 +32,7 @@ article div{
 }
 #workExperiences {
     border-left:2px solid #64B5F6;
-    padding-left:1em;
+    padding-left:2rem;
 }
 .workExperience h3{
     position:relative;
@@ -52,7 +52,7 @@ article div{
     background-color:white;
     border:2px solid #64B5F6;
     position:absolute;
-    left:-26px;
+    left:-30px;
     top:8px;
     margin-right:12px;
 }
