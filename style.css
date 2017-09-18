@@ -30,6 +30,9 @@ article div{
     line-height: 140%;
     font-size:16px;
 }
+#blog article{
+    margin:1em 50px;
+}
 #workExperiences {
     border-left:2px solid #64B5F6;
     padding-left:2rem;
