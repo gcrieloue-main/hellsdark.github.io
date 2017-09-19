@@ -39,7 +39,7 @@ function getWorkExperiences(){
         var endDate="Aujourd'hui";
         if (end<new Date()){
             endDate = ("0" + (end.getMonth()+1)).slice(-2) + "/" 
-            + end.getFullYear();
+            + end.getFullpYear();
             }
             element.fields.begin=beginDate;
             element.fields.end=endDate;
@@ -70,6 +70,7 @@ var blog=new Vue({
     data:{contents:[{fields:{title:''}}]},
     created:function(){
         this.getContent();
+        Prism.highlightAll();
     },
     methods:{
         getContent(){
