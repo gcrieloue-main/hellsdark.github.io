@@ -39,7 +39,7 @@ function getWorkExperiences(){
         var endDate="Aujourd'hui";
         if (end<new Date()){
             endDate = ("0" + (end.getMonth()+1)).slice(-2) + "/" 
-            + end.getFullpYear();
+            + end.getFullYear();
             }
             element.fields.begin=beginDate;
             element.fields.end=endDate;
@@ -47,7 +47,7 @@ function getWorkExperiences(){
         return element
     }))
         .catch((error) => {
-        console.error(error)
+        console.error(error);
     })   
 }
 
