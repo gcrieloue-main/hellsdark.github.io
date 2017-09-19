@@ -71,7 +71,7 @@ var blog=new Vue({
     created:function(){
         this.getContent();
     },
-    mounted::function(){
+    mounted:function(){
         Prism.highlightAll();
     },
     methods:{
