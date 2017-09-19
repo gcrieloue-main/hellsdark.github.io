@@ -70,6 +70,8 @@ var blog=new Vue({
     data:{contents:[{fields:{title:''}}]},
     created:function(){
         this.getContent();
+    },
+    mounted::function(){
         Prism.highlightAll();
     },
     methods:{
