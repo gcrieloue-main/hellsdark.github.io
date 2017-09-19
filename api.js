@@ -35,11 +35,11 @@ function getWorkExperiences(){
             var begin = new Date(element.fields.periodBegin);
             var end = new Date(element.fields.periodEnd);
             var beginDate = ("0" + (begin.getMonth()+1)).slice(-2) + "/" 
-            + begin.getYear();
+            + begin.getFullYear();
         var endDate="Aujourd'hui";
         if (end<new Date()){
             endDate = ("0" + (end.getMonth()+1)).slice(-2) + "/" 
-            + end.getYear();
+            + end.getFullYear();
             }
             element.fields.begin=beginDate;
             element.fields.end=endDate;
