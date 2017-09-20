@@ -3,14 +3,25 @@
         <title>Crieloue Gilles</title>
         <link rel="stylesheet" href="knacss.css" />
         <link rel="stylesheet" href="landpage.css"></link>
+        <script src="https://unpkg.com/vue"></script>
     </head>
-    <body>
+    <body id=landing" v-bind=style:"bgc">
         <main><h1>Bonjour,</h1>
         <p>Je suis Gilles CRIELOUE, Ingénieur logiciel.</p>
         <p>
-            <a href="/">CV</a>
-            <a href="blog.html">Blog</a>
+        <a href="/" v-on:mouseover="bgc.backgroundColor=green">CV</a>
+        <a href="blog.html" v-on:mouseover="bgc.backgroundColor=red">Blog</a>
         </p>
         </main>
+        <script>
+            new Vue({
+                el: '#landing',
+                data: {
+                    bgc: {
+                        backgroundColor: ''
+                    }
+                }
+            })
+        </script>
     </body>
     </html
