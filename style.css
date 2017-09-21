@@ -1,12 +1,5 @@
 body{
     font-family: 'Open Sans', sans-serif;
-    color:#626262;
-}
-@media (min-width: 991px) {
-main{
-    max-width: 991px;
-}
-}
 
 main{
     margin:0 auto;
@@ -21,6 +14,9 @@ h2{
     font-weight: 100;
     color:#01579B;
 }
+h4{
+    font-size:1.8rem;
+}
 a{
     color:#1976D2;
 }
@@ -29,7 +25,7 @@ article{
 }
 article div{
     line-height: 140%;
-    font-size:16px;
+    font-size:1.6rem;
 }
 #blog article{
     margin:1em 50px;
