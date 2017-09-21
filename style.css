@@ -1,3 +1,12 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    color:#626262;
+}
+@media (min-width: 991px) {
+    main{
+        max-width: 991px;
+    }
+}
 main{
     margin:0 auto;
 }
