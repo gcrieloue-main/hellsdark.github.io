@@ -2,6 +2,7 @@
     margin:0;
     padding:0;
     background:url(images/bg.png) no-repeat center fixed;
+    background-color:#90CAF9;
     background-size:cover;
     transition: background-color 1000ms linear;
     width:100%;
