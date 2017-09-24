@@ -20,6 +20,7 @@ main{
     color:white;
     border-radius:5px;
     padding:1rem;
+    min-width:700px;
 }
 h1,p{
     text-align:center;
