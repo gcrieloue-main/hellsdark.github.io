@@ -28,6 +28,9 @@ main div{
 h1, footer{
     text-align:center;
 }
+footer{
+    color:#3E2723;
+}
 a{
     display:inline-block;
     background-color:white;
