@@ -64,4 +64,8 @@ a:hover,a:active,a:visited{
 }
 ul{
     list-style-type:none;
+    display:inline-flex;
+}
+ul li{
+    padding:1rem;
 }
