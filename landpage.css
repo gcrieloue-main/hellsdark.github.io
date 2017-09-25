@@ -56,6 +56,7 @@ a{
 }
 .special-button a{
     margin:0;
+    color:#3E2723;
 }
 a:hover,a:active,a:visited{
     background-color:white;
