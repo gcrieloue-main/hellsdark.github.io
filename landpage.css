@@ -30,6 +30,7 @@ h1, footer{
 }
 footer{
     color:#3E2723;
+    margin-top:2rem;
 }
 a{
     display:inline-block;
