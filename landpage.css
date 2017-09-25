@@ -1,5 +1,5 @@
 html{
-    background-color:#90CAF9;
+    background-color:#BCAAA4;
 }
 #landing{
     margin:0;
@@ -46,6 +46,7 @@ a{
     background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
     padding:2px;
     border-radius:5px;
+    font-weight:bold;
 }
 .special-button a{
     margin:0;
