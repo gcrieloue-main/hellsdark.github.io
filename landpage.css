@@ -33,7 +33,7 @@ footer{
     margin-top:2rem;
 }
 footer i{
-    margin-right:1rem
+    margin-right:0.5rem
 }
 main div a{
     display:inline-block;
@@ -78,4 +78,8 @@ ul li i, ul li a{
 }
 ul li a{
     font-size:1.8rem;
+    text-decoration:none;
+}
+ul li a:hover{
+    filter: brightness(150%);
 }
