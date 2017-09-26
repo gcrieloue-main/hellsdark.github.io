@@ -71,10 +71,7 @@ ul li{
     font-size:3rem;
     line-height:3rem;
 }
-ul li i{
+ul li i, ul li span{
     font-size:3rem;
-}
-ul li span{
-    line-height:3rem;
     vertical-align:middle;
 }
