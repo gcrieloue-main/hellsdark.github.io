@@ -64,6 +64,7 @@ main div a:hover,main div a:active,main div a:visited{
 }
 ul{
     list-style-type:none;
+    padding:0;
 }
 ul li{
     padding:1rem;
