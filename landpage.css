@@ -64,8 +64,17 @@ a:hover,a:active,a:visited{
 }
 ul{
     list-style-type:none;
-    display:inline-flex;
 }
 ul li{
     padding:1rem;
+    display:inline-block;
+    font-size:3rem;
+    line-height:3rem;
+}
+ul li i{
+    font-size:3rem;
+}
+ul li span{
+    line-height:3rem;
+    vertical-align:middle;
 }
