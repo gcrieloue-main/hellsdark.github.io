@@ -10,7 +10,8 @@ var converter = new showdown.Converter({headerLevelStart: 4});
 
 function getArticles(){
     return client.getEntries({
-        content_type: "article"
+        content_type: "article",
+        order:"-fields.date"
     })
         .then((response) => response.items.map(function(element){
         element.fields.content=converter.makeHtml(element.fields.content);
