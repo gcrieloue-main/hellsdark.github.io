@@ -6,7 +6,7 @@ const client = contentful.createClient({
     accessToken: "fe844e41216f12522cc40b8a179e7c81c8a0f17b797503155ba949afbb6aca96"
 });
 
-var converter = new showdown.Converter({headerLevelStart: 4});
+var converter = new showdown.Converter({headerLevelStart: 4, simpleLineBreaks: true});
 
 function getArticles(){
     return client.getEntries({
