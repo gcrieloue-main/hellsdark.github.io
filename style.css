@@ -129,3 +129,6 @@ pre{
     overflow:auto;
 }
 
+#blog li p{
+    margin:0.5em;
+}
