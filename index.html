@@ -35,6 +35,7 @@
                         <h2>Formation</h2>
                         <div v-html="paragraphs[2].fields.text"></div>
                     </article>
+                    <div id="experience">
                     <h2>Mes expériences</h2>
                     <div id="workExperiences">
                     <article class="workExperience" v-for="content in workExperiences">
@@ -42,6 +43,7 @@
                         <div v-html="content.fields.description"></div>
                     </article>
                 </div>
+            </div>
                 </section>
             </main>
             <script src="./api.js"></script>

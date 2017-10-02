@@ -45,7 +45,7 @@ article div{
 }
 @media print  
 {
-    article {
+    article, #experience {
         page-break-inside: avoid;
     }
 }
