@@ -15,10 +15,11 @@ function getArticles(){
     })
         .then((response) => response.items.map(function(element){
         element.fields.content=converter.makeHtml(element.fields.content);
-        var date = new Date(element.fields.date);
-        var formattedNumber = ("0" + (date.getMonth()+1)).slice(-2);
         if (element.fields.date!=undefined){
-        element.fields.date=date.getDate()+"/"+formattedNumber;
+        var date = new Date(element.fields.date);
+        var formatedMonth = ("0" + (date.getMonth()+1)).slice(-2);
+        var formatedDay = ("0" + (date.getDate())).slice(-2);
+        element.fields.date=formatedDay+"/"+formatedMonth;
         }
         return element
     }))
