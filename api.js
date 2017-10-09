@@ -9,12 +9,15 @@ const client = contentful.createClient({
 var converter = new showdown.Converter({headerLevelStart: 4, simpleLineBreaks: true});
 
 function getArticles(page){
+    if (page === undefined){
+        page = 0;
+    }
     var nbArticles = 10;
     return client.getEntries({
         content_type: "article",
-        order:"-fields.date",
-        skip:page*nbArticles,
-        limit:nbArticles
+        order: "-fields.date",
+        skip: page * nbArticles,
+        limit: nbArticles
         
     })
         .then((response) => response.items.map(function(element){
