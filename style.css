@@ -134,9 +134,10 @@ pre{
 }
 a.btn{
     display:inline-block;
-    background-color:white;
+    background-color:#eee;
     width:10em;
     height:3em;
+    border:1px solid;
     border-radius:3px;
     margin:1em;
     text-align:center;
@@ -145,7 +146,6 @@ a.btn{
     text-decoration:none;
 }
 a.btn:hover,a.btn:active,main div a.btn:visited{
-    background-color:white;
     box-shadow: inset 0px 0px 9px -2px rgba(0,0,0,0.75);
 }
 
