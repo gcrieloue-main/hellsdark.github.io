@@ -1,3 +1,7 @@
+var router = new VueRouter({
+        mode: 'history',
+        routes: []
+});
 var blog=new Vue({
     el:"#blog",
     data:{contents:[{fields:{title:''}}]},
@@ -9,7 +13,7 @@ var blog=new Vue({
     },
     methods:{
         getContent(){
-            getArticles().then(response => this.contents=response);
+            getArticles(this.$route.query.page).then(response => this.contents=response);
         }
     }
 });

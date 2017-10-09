@@ -8,7 +8,7 @@ const client = contentful.createClient({
 
 var converter = new showdown.Converter({headerLevelStart: 4, simpleLineBreaks: true});
 
-function getArticles(){
+function getArticles(page){
     return client.getEntries({
         content_type: "article",
         order:"-fields.date"
