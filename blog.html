@@ -21,7 +21,9 @@
                 <h2>{{ content.fields.title }}</h2>
                 <div v-html="content.fields.content"></div>
             </article>
-            <a v-bind:href="'?page=' + (page+1)">Articles précédents</a>
+            <p class="txtcenter">
+                <a class="btn" v-bind:href="'?page=' + (page+1)">Articles précédents</a>
+            </p>
         </main>
         <script src="./prism.js" data-manual></script>
         <script src="./api.js"></script>
