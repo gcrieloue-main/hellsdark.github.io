@@ -9,17 +9,21 @@ const client = contentful.createClient({
 var converter = new showdown.Converter({headerLevelStart: 4, simpleLineBreaks: true});
 
 function getArticles(page){
+    var nbArticles = 10;
     return client.getEntries({
         content_type: "article",
-        order:"-fields.date"
+        order:"-fields.date",
+        skip:page*nbArticles,
+        limit:nbArticles
+        
     })
         .then((response) => response.items.map(function(element){
-        element.fields.content=converter.makeHtml(element.fields.content);
-        if (element.fields.date!=undefined){
-        var date = new Date(element.fields.date);
-        var formatedMonth = ("0" + (date.getMonth()+1)).slice(-2);
-        var formatedDay = ("0" + (date.getDate())).slice(-2);
-        element.fields.date=formatedDay+"/"+formatedMonth;
+            element.fields.content=converter.makeHtml(element.fields.content);
+            if (element.fields.date!=undefined){
+            var date = new Date(element.fields.date);
+            var formatedMonth = ("0" + (date.getMonth()+1)).slice(-2);
+            var formatedDay = ("0" + (date.getDate())).slice(-2);
+            element.fields.date=formatedDay+"/"+formatedMonth;
         }
         return element
     }))
