@@ -16,7 +16,7 @@ function getArticles(page){
     return client.getEntries({
         content_type: "article",
         order: "-fields.date",
-        skip: page * nbArticles,
+        skip: (page - 1) * nbArticles,
         limit: nbArticles
         
     })

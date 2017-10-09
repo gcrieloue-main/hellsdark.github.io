@@ -5,8 +5,16 @@ var router = new VueRouter({
 var blog=new Vue({
     router,
     el:"#blog",
-    data:{contents:[{fields:{title:''}}]},
+    data:{contents:[{fields:{title:''}}],
+    page=0},
     created:function(){
+        var page = this.$route.query.page;
+        if (page === undefined){
+            this.page = 0;
+        }
+        else{
+            this.page = page;
+        }
         this.getContent();
     },
     updated:function(){
