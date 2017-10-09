@@ -8,13 +8,14 @@ var blog=new Vue({
     data:{contents:[{fields:{title:''}}]},
     created:function(){
         this.getContent();
+        console.log(this.$route.query.page);
     },
     updated:function(){
         Prism.highlightAll();
     },
     methods:{
         getContent(){
-            getArticles(this.$route.query.page).then(response => this.contents=response);
+            getArticles().then(response => this.contents=response);
         }
     }
 });
