@@ -22,7 +22,7 @@
                 <div v-html="content.fields.content"></div>
             </article>
             <p class="txtcenter">
-                <a class="btn" v-bind:href="'?page=' + (page+1)">Articles précédents</a>
+                <a class="btn" v-bind:href="'?page=' + (page+1)" v-if="contents.length == 10">Articles précédents</a>
             </p>
         </main>
         <script src="./prism.js" data-manual></script>
