@@ -8,7 +8,8 @@ var blog=new Vue({
     data:{contents:[{fields:{title:''}}]},
     created:function(){
         this.getContent();
-        console.log(this.$route.query.page);
+        console.log(this.$route.query);
+        console.log(this.$route.params);
     },
     updated:function(){
         Prism.highlightAll();
