@@ -9,14 +9,14 @@ var blog=new Vue({
     created:function(){
         this.getContent();
         console.log(this.$route.query);
-        console.log(this.$route.params);
     },
     updated:function(){
         Prism.highlightAll();
     },
     methods:{
         getContent(){
-            getArticles().then(response => this.contents=response);
+        console.log(this.$route.query);
+            getArticles(this.$route.query.page).then(response => this.contents=response);
         }
     }
 });
