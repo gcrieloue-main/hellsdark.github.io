@@ -10,7 +10,7 @@ var converter = new showdown.Converter({headerLevelStart: 4, simpleLineBreaks: t
 
 function getArticles(page){
     if (page === undefined){
-        page = 0;
+        page = 1;
     }
     var nbArticles = 10;
     return client.getEntries({
