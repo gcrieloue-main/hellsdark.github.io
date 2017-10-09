@@ -3,6 +3,7 @@ var router = new VueRouter({
         routes: []
 });
 var blog=new Vue({
+    router,
     el:"#blog",
     data:{contents:[{fields:{title:''}}]},
     created:function(){
