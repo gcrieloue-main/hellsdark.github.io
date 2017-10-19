@@ -17,7 +17,7 @@ main{
     min-width:700px;
     text-align:center;
 }
-main div{
+div#content, div#availability{
     text-align:left;
     background-color: rgba(0, 0, 0, 0.5);
     color:white;
