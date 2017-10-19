@@ -24,6 +24,10 @@ main div{
     border-radius:5px;
     padding:1rem 3rem;
 }
+main div div{
+    margin:0 auto;
+    max-width:750px;
+}
 h1, footer{
     text-align:center;
 }
