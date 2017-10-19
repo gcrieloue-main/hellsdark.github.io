@@ -10,8 +10,7 @@ body{
     transition: background-color 500ms ease-out;
 }
 img{
-
-    margin-top:50px;
+    margin-top:100px;
 }
 main{
     min-width:700px;
