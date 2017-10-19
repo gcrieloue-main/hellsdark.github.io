@@ -3,13 +3,15 @@ body{
     font-family: 'Open Sans', sans-serif;
 }
 #landing{
-    margin:50px 0 0 0;
+    margin:0;
     padding:0;
     width:100%;
     height:100%;
     transition: background-color 500ms ease-out;
 }
 img{
+
+    margin-top:50px;
 }
 main{
     min-width:700px;
