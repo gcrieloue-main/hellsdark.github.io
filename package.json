@@ -1,0 +1,10 @@
+{
+  "name": "gilles-crieloue-website",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
+  "devDependencies": {
+    "webpack": "^3.8.1"
+  }
+}
