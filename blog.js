@@ -3,12 +3,13 @@ import VueRouter from './vue-router.js';
 import Prism from './prism.js';
 import * as Api from './api.js';
 
+Vue.use(VueRouter);
+
 var router = new VueRouter({
         mode: 'history',
         routes: []
 });
 
-Vue.use(VueRouter);
 
 var blog=new Vue({
     router,
@@ -20,7 +21,7 @@ var blog=new Vue({
     created:function(){
         var page = 1;
         if (page === undefined){
-            this.page = 1;
+            this.page = this.$route.query.page;
         }
         else{
             this.page = page;
@@ -32,7 +33,7 @@ var blog=new Vue({
     },
     methods:{
         getContent(){
-            Api.getArticles(1).then(response => this.contents=response);
+            Api.getArticles(this.page).then(response => this.contents=response);
         }
     }
 });
