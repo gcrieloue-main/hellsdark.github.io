@@ -687,9 +687,9 @@ var blog=new __WEBPACK_IMPORTED_MODULE_0__vue_min_js___default.a({
         page:1
     },
     created:function(){
-        var page = 1;
+        var page = this.$router.query.page;
         if (page === undefined){
-            this.page = this.$router.query.page;
+            this.page = 1;
         }
         else{
             this.page = page;
