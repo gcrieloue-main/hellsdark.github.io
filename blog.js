@@ -1,6 +1,6 @@
-import * as Vue from './vue.min.js';
-import * as VueRouter from './vue-router.js';
-import * as Prism from './prism.js';
+import Vue from './vue.min.js';
+import VueRouter from './vue-router.js';
+import Prism from './prism.js';
 import * as Api from './api.js';
 
 var router = new VueRouter({
