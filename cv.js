@@ -12,8 +12,8 @@ var cv=new Vue({
     },
     methods:{
         getData(){
-            getWorkExperiences().then(response => this.workExperiences=response);
-            getCvParagraphs().then(response => this.paragraphs=response);
+            Api.getWorkExperiences().then(response => this.workExperiences=response);
+            Api.getCvParagraphs().then(response => this.paragraphs=response);
         }
     }
 });

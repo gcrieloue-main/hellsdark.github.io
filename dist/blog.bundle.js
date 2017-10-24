@@ -550,8 +550,8 @@ process.umask = function() { return 0; };
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = getArticles;
-/* unused harmony export getWorkExperiences */
-/* unused harmony export getCvParagraphs */
+/* harmony export (immutable) */ __webpack_exports__["c"] = getWorkExperiences;
+/* harmony export (immutable) */ __webpack_exports__["b"] = getCvParagraphs;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__showdown_min_js__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__showdown_min_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__showdown_min_js__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__contentful_browser_min_js__ = __webpack_require__(7);

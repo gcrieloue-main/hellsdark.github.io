@@ -550,8 +550,8 @@ process.umask = function() { return 0; };
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = getArticles;
-/* unused harmony export getWorkExperiences */
-/* unused harmony export getCvParagraphs */
+/* harmony export (immutable) */ __webpack_exports__["c"] = getWorkExperiences;
+/* harmony export (immutable) */ __webpack_exports__["b"] = getCvParagraphs;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__showdown_min_js__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__showdown_min_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__showdown_min_js__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__contentful_browser_min_js__ = __webpack_require__(7);
@@ -679,8 +679,8 @@ var cv=new __WEBPACK_IMPORTED_MODULE_0__vue_min_js___default.a({
     },
     methods:{
         getData(){
-            getWorkExperiences().then(response => this.workExperiences=response);
-            getCvParagraphs().then(response => this.paragraphs=response);
+            __WEBPACK_IMPORTED_MODULE_1__api_js__["c" /* getWorkExperiences */]().then(response => this.workExperiences=response);
+            __WEBPACK_IMPORTED_MODULE_1__api_js__["b" /* getCvParagraphs */]().then(response => this.paragraphs=response);
         }
     }
 });
