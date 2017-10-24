@@ -113,7 +113,7 @@ var router = new __WEBPACK_IMPORTED_MODULE_1__vue_router_js___default.a({
         routes: []
 });
 
-__WEBPACK_IMPORTED_MODULE_0__vue_min_js___default.a.use(router);
+__WEBPACK_IMPORTED_MODULE_0__vue_min_js___default.a.use(__WEBPACK_IMPORTED_MODULE_1__vue_router_js___default.a);
 
 var blog=new __WEBPACK_IMPORTED_MODULE_0__vue_min_js___default.a({
     router,
