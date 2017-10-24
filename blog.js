@@ -20,7 +20,7 @@ var blog=new Vue({
     },
     created:function(){
         console.log(this);
-        var page = this.$router.query.page;
+        var page = this._route.query.page;
         if (page === undefined){
             this.page = 1;
         }
