@@ -1,3 +1,5 @@
+import showdown from './showdown.min.js';
+import contentful from './contentful.browser.min.js';
 
 const client = contentful.createClient({
     // This is the space ID. A space is like a project folder in Contentful terms
@@ -8,7 +10,7 @@ const client = contentful.createClient({
 
 var converter = new showdown.Converter({headerLevelStart: 4, simpleLineBreaks: true});
 
-function getArticles(page){
+export function getArticles(page){
     if (page === undefined){
         page = 1;
     }
@@ -35,7 +37,7 @@ function getArticles(page){
     })   
 }
 
-function getWorkExperiences(){
+export function getWorkExperiences(){
     return client.getEntries({
         content_type: "workExperience",
            order:"-fields.periodBegin"
@@ -60,7 +62,7 @@ function getWorkExperiences(){
     })   
 }
 
-function getCvParagraphs(){
+export function getCvParagraphs(){
     return client.getEntries({
         content_type: "paragraph",
         order:"sys.createdAt"

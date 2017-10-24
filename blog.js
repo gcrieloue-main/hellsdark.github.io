@@ -1,3 +1,8 @@
+import Vue from './vue.min.js';
+import VueRouter from './vue-router.js';
+import Prism from './prism.js';
+import * as Api from './api.js';
+
 var router = new VueRouter({
         mode: 'history',
         routes: []
@@ -24,7 +29,7 @@ var blog=new Vue({
     },
     methods:{
         getContent(){
-            getArticles(this.$route.query.page).then(response => this.contents=response);
+            Api.getArticles(this.$route.query.page).then(response => this.contents=response);
         }
     }
 });

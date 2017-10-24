@@ -1,10 +1,13 @@
 const path = require('path');
 
 const config = {
-    entry: './entry.js',
+    entry: {
+        blog:  './blog.js',
+        cv:  './cv.js'
+    },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: '[name].bundle.js'
     }
 };
 
