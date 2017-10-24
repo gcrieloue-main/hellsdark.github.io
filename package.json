@@ -5,6 +5,7 @@
     "build": "webpack --config webpack.config.js"
   },
   "devDependencies": {
+    "contentful": "^5.0.1",
     "webpack": "^3.8.1"
   }
 }
