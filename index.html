@@ -15,26 +15,26 @@
                 <section class="one-third">
                     <article id=about" class="about">
                         <h2>A propos de moi</h2>
-                        <div v-html="paragraphs[0].fields.text"></div>
+                        <div v-cloak v-html="paragraphs[0].fields.text"></div>
                     </article>
                     <article id="skills">
                         <h2>Compétences</h2>
-                        <div v-html="paragraphs[1].fields.text"></div>
+                        <div v-cloak v-html="paragraphs[1].fields.text"></div>
                     </article>
                     <article id="languages">
                         <h2>Langues</h2>
-                        <div v-html="paragraphs[3].fields.text"></div>
+                        <div v-cloak v-html="paragraphs[3].fields.text"></div>
                     </article>
                 </section>
                 <section id="cv-content">
                     <article id="education">
                         <h2>Formation</h2>
-                        <div v-html="paragraphs[2].fields.text"></div>
+                        <div v-cloak v-html="paragraphs[2].fields.text"></div>
                     </article>
                     <div id="experience">
                     <h2>Mes expériences</h2>
                     <div id="workExperiences">
-                    <article class="workExperience" v-for="content in workExperiences">
+                    <article v-cloak class="workExperience" v-for="content in workExperiences">
                     <h3><span class="period">{{content.fields.begin}} - {{content.fields.end}}</span> : {{ content.fields.title }}</h2>
                         <div v-html="content.fields.description"></div>
                     </article>
