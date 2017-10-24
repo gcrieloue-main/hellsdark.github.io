@@ -123,7 +123,7 @@ var blog=new __WEBPACK_IMPORTED_MODULE_0__vue_min_js___default.a({
         page:1
     },
     created:function(){
-        var page = this.$route.query.page;
+        var page = 1;
         if (page === undefined){
             this.page = 1;
         }
@@ -137,7 +137,7 @@ var blog=new __WEBPACK_IMPORTED_MODULE_0__vue_min_js___default.a({
     },
     methods:{
         getContent(){
-            __WEBPACK_IMPORTED_MODULE_3__api_js__["a" /* getArticles */](this.$route.query.page).then(response => this.contents=response);
+            __WEBPACK_IMPORTED_MODULE_3__api_js__["a" /* getArticles */](1).then(response => this.contents=response);
         }
     }
 });
