@@ -1,3 +1,5 @@
+import Vue from './vue.min.js';
+import * as Api from './api.js';
 
 var cv=new Vue({
     el:"#cv",

@@ -7,6 +7,9 @@ var router = new VueRouter({
         mode: 'history',
         routes: []
 });
+
+Vue.use(VueRouter);
+
 var blog=new Vue({
     router,
     el:"#blog",
@@ -15,7 +18,7 @@ var blog=new Vue({
         page:1
     },
     created:function(){
-        var page = this.$route.query.page;
+        var page = 1;
         if (page === undefined){
             this.page = 1;
         }
@@ -29,7 +32,7 @@ var blog=new Vue({
     },
     methods:{
         getContent(){
-            Api.getArticles(this.$route.query.page).then(response => this.contents=response);
+            Api.getArticles(1).then(response => this.contents=response);
         }
     }
 });
