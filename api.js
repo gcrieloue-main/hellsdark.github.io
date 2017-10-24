@@ -1,5 +1,5 @@
-import showdown from './showdown.min.js';
-import contentful from './contentful.browser.min.js';
+import * as showdown from './showdown.min.js';
+import * as contentful from './contentful.browser.min.js';
 
 const client = contentful.createClient({
     // This is the space ID. A space is like a project folder in Contentful terms

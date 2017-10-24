@@ -3264,14 +3264,14 @@ Prism.languages.java=Prism.languages.extend("clike",{keyword:/\b(abstract|contin
 
 
 
-const client = __WEBPACK_IMPORTED_MODULE_1__contentful_browser_min_js___default.a.createClient({
+const client = __WEBPACK_IMPORTED_MODULE_1__contentful_browser_min_js__["createClient"]({
     // This is the space ID. A space is like a project folder in Contentful terms
     space: "oamir411dfuu",
     // This is the access token for this space. Normally you get both ID and the token in the Contentful web app
     accessToken: "fe844e41216f12522cc40b8a179e7c81c8a0f17b797503155ba949afbb6aca96"
 });
 
-var converter = new __WEBPACK_IMPORTED_MODULE_0__showdown_min_js___default.a.Converter({headerLevelStart: 4, simpleLineBreaks: true});
+var converter = new __WEBPACK_IMPORTED_MODULE_0__showdown_min_js__["Converter"]({headerLevelStart: 4, simpleLineBreaks: true});
 
 function getArticles(page){
     if (page === undefined){
