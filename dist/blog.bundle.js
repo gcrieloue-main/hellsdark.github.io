@@ -671,12 +671,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
+__WEBPACK_IMPORTED_MODULE_0__vue_min_js___default.a.use(__WEBPACK_IMPORTED_MODULE_1__vue_router_js___default.a);
+
 var router = new __WEBPACK_IMPORTED_MODULE_1__vue_router_js___default.a({
         mode: 'history',
         routes: []
 });
 
-__WEBPACK_IMPORTED_MODULE_0__vue_min_js___default.a.use(__WEBPACK_IMPORTED_MODULE_1__vue_router_js___default.a);
 
 var blog=new __WEBPACK_IMPORTED_MODULE_0__vue_min_js___default.a({
     router,
@@ -688,7 +689,7 @@ var blog=new __WEBPACK_IMPORTED_MODULE_0__vue_min_js___default.a({
     created:function(){
         var page = 1;
         if (page === undefined){
-            this.page = 1;
+            this.page = this.$router.query.page;
         }
         else{
             this.page = page;
@@ -700,7 +701,7 @@ var blog=new __WEBPACK_IMPORTED_MODULE_0__vue_min_js___default.a({
     },
     methods:{
         getContent(){
-            __WEBPACK_IMPORTED_MODULE_3__api_js__["a" /* getArticles */](1).then(response => this.contents=response);
+            __WEBPACK_IMPORTED_MODULE_3__api_js__["a" /* getArticles */](this.page).then(response => this.contents=response);
         }
     }
 });
