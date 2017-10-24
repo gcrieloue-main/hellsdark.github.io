@@ -108,11 +108,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-var router = new __WEBPACK_IMPORTED_MODULE_1__vue_router_js___default.a({
+var router = new __WEBPACK_IMPORTED_MODULE_1__vue_router_js__({
         mode: 'history',
         routes: []
 });
-var blog=new __WEBPACK_IMPORTED_MODULE_0__vue_min_js___default.a({
+var blog=new __WEBPACK_IMPORTED_MODULE_0__vue_min_js__({
     router,
     el:"#blog",
     data:{
@@ -130,7 +130,7 @@ var blog=new __WEBPACK_IMPORTED_MODULE_0__vue_min_js___default.a({
         this.getContent();
     },
     updated:function(){
-        __WEBPACK_IMPORTED_MODULE_2__prism_js___default.a.highlightAll();
+        __WEBPACK_IMPORTED_MODULE_2__prism_js__["highlightAll"]();
     },
     methods:{
         getContent(){
