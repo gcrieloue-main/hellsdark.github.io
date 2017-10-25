@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Crieloue Gilles - CV</title>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="knacss.css" />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="print.css" media="print" />
+        </head>
+        <body>
+            <header>
+            <h1>Crieloue Gilles</h1>
+            <p>Ingénieur logiciel indépendant</p>
+            </header>
+            <main id="cv" class="grid--reverse has-gutter">
+                <section class="one-third">
+                    <article id=about" class="about">
+                        <h2>A propos de moi</h2>
+                        <div v-cloak v-html="paragraphs[0].fields.text"></div>
+                    </article>
+                    <article id="skills">
+                        <h2>Compétences</h2>
+                        <div v-cloak v-html="paragraphs[1].fields.text"></div>
+                    </article>
+                    <article id="languages">
+                        <h2>Langues</h2>
+                        <div v-cloak v-html="paragraphs[3].fields.text"></div>
+                    </article>
+                </section>
+                <section id="cv-content">
+                    <article id="education">
+                        <h2>Formation</h2>
+                        <div v-cloak v-html="paragraphs[2].fields.text"></div>
+                    </article>
+                    <div id="experience">
+                    <h2>Mes expériences</h2>
+                    <div id="workExperiences">
+                    <article v-cloak class="workExperience" v-for="content in workExperiences">
+                    <h3><span class="period">{{content.fields.begin}} - {{content.fields.end}}</span> : {{ content.fields.title }}</h2>
+                        <div v-html="content.fields.description"></div>
+                    </article>
+                </div>
+            </div>
+                </section>
+            </main>
+            <script src="./dist/cv.bundle.js"></script>
+        </body>
+    </html>
