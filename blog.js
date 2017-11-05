@@ -19,8 +19,8 @@ var blog=new Vue({
         page:1
     },
     created:function(){
-        var page = this._route.query.page;
-        if (page === undefined){
+        var page = Number(this._route.query.page);
+        if (isNaN(page)){
             this.page = 1;
         }
         else{
