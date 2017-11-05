@@ -20,12 +20,7 @@ var blog=new Vue({
     },
     created:function(){
         var page = Number(this._route.query.page);
-        if (isNaN(page)){
-            this.page = 1;
-        }
-        else{
-            this.page = page;
-        }
+        this.page = page || 1;
         this.getContent();
     },
     updated:function(){

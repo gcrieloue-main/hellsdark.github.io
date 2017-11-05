@@ -11,9 +11,7 @@ const client = contentful.createClient({
 var converter = new showdown.Converter({headerLevelStart: 4, simpleLineBreaks: true});
 
 export function getArticles(page){
-    if (page === undefined){
-        page = 1;
-    }
+    page = page || 1;
     var nbArticles = 10;
     return client.getEntries({
         content_type: "article",
