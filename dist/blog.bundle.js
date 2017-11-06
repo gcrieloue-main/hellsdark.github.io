@@ -2827,9 +2827,7 @@ const client = __WEBPACK_IMPORTED_MODULE_1_contentful__["a" /* createClient */](
 var converter = new __WEBPACK_IMPORTED_MODULE_0__showdown_min_js__["Converter"]({headerLevelStart: 4, simpleLineBreaks: true});
 
 function getArticles(page){
-    if (page === undefined){
-        page = 1;
-    }
+    page = page || 1;
     var nbArticles = 10;
     return client.getEntries({
         content_type: "article",
@@ -7988,13 +7986,8 @@ var blog=new __WEBPACK_IMPORTED_MODULE_0__vue_min_js___default.a({
         page:1
     },
     created:function(){
-        var page = this._route.query.page;
-        if (page === undefined){
-            this.page = 1;
-        }
-        else{
-            this.page = page;
-        }
+        var page = Number(this._route.query.page);
+        this.page = page || 1;
         this.getContent();
     },
     updated:function(){

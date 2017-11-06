@@ -2827,9 +2827,7 @@ const client = __WEBPACK_IMPORTED_MODULE_1_contentful__["a" /* createClient */](
 var converter = new __WEBPACK_IMPORTED_MODULE_0__showdown_min_js__["Converter"]({headerLevelStart: 4, simpleLineBreaks: true});
 
 function getArticles(page){
-    if (page === undefined){
-        page = 1;
-    }
+    page = page || 1;
     var nbArticles = 10;
     return client.getEntries({
         content_type: "article",
