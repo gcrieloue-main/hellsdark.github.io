@@ -26,6 +26,7 @@ export function getArticles(page) {
     })
     .then(response =>
       response.items.map(function(element) {
+        element.fields.title = replaceSmileys(element.fields.title);
         element.fields.content = converter.makeHtml(replaceSmileys(element.fields.content));
         if (element.fields.date != undefined) {
           var date = new Date(element.fields.date);
@@ -41,8 +42,14 @@ export function getArticles(page) {
     });
 }
 
+/**
+ * Replace ascii smileys with utf-8 smileys
+ */
 function replaceSmileys(text){
-    return text.replace(':)', '😃');
+    return text.replace(':)', '😃')
+        .replace(';)', '😉')
+        .replace(':(', '😩')
+        .replace(':D', '😄');
 }
 
 export function getWorkExperiences() {
