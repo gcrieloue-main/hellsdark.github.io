@@ -49,10 +49,10 @@ export function getArticles(page) {
  */
 function replaceSmileys(text) {
   return text
-    .replace(":)", "😃")
-    .replace(";)", "😉")
-    .replace(":(", "😩")
-    .replace(":D", "😄");
+    .replace(/:\)/g, "😃")
+    .replace(/;\)/g, "😉")
+    .replace(/:\(/g, "😩")
+    .replace(/:D/g, "😄");
 }
 
 export function getWorkExperiences() {
