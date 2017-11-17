@@ -24,24 +24,49 @@ export function getArticles(page) {
       skip: (page - 1) * nbArticles,
       limit: nbArticles
     })
-    .then(response =>
-      response.items.map(function(element) {
-        element.fields.title = replaceSmileys(element.fields.title);
-        element.fields.content = converter.makeHtml(
-          replaceSmileys(element.fields.content)
-        );
-        if (element.fields.date != undefined) {
-          var date = new Date(element.fields.date);
-          var formatedMonth = ("0" + (date.getMonth() + 1)).slice(-2);
-          var formatedDay = ("0" + date.getDate()).slice(-2);
-          element.fields.date = formatedDay + "/" + formatedMonth;
-        }
-        return element;
-      })
-    )
+    .then(articles => articles.items.map(processArticle))
     .catch(error => {
       console.error(error);
     });
+}
+
+export function getArticle(id) {
+  console.log("id " + id);
+  return client
+    .getEntry(id)
+    .then(article => processArticle(article))
+    .catch(error => {
+      console.error(error);
+    });
+}
+
+export function searchArticles(text) {
+  var nbArticles = 10;
+  return client
+    .getEntries({
+      content_type: "article",
+      order: "-fields.date",
+      limit: nbArticles,
+      "fields.content[match]": text
+    })
+    .then(response => response.items.map(processArticle))
+    .catch(error => {
+      console.error(error);
+    });
+}
+
+function processArticle(element) {
+  element.fields.title = replaceSmileys(element.fields.title);
+  element.fields.content = converter.makeHtml(
+    replaceSmileys(element.fields.content)
+  );
+  if (element.fields.date != undefined) {
+    var date = new Date(element.fields.date);
+    var formatedMonth = ("0" + (date.getMonth() + 1)).slice(-2);
+    var formatedDay = ("0" + date.getDate()).slice(-2);
+    element.fields.date = formatedDay + "/" + formatedMonth;
+  }
+  return element;
 }
 
 /**

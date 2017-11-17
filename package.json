@@ -2,7 +2,8 @@
   "name": "gilles-crieloue-website",
   "version": "1.0.0",
   "scripts": {
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "watch": "webpack --config webpack.config.js --watch"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.31",
