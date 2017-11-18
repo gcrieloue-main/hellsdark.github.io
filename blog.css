@@ -43,7 +43,7 @@ header h1{
 }
 header input{
     border:0;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #626262;
     font-size:1em;
     padding: 5px;
     outline:none;
@@ -117,9 +117,6 @@ pre{
 }
 .btn:hover,.btn:active,.btn:visited{
     box-shadow: inset 0px 0px 9px -2px rgba(0,0,0,0.75);
-}
-.search-results{
-    margin : 0 50px;
 }
 
 [v-cloak]{ 
