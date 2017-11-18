@@ -83,8 +83,9 @@ const Search = {
   template: `<div id="search-results">
   <p v-if="searchEmpty" v-cloak>Que cherchez vous ?</p>
   <p v-if="!contents.length && !searchEmpty" v-cloak>Aucun résultat</p>
-  <ul v-for="content in contents" v-cloak>
-       <li><router-link :to="{name:'Article',params:{id:content.sys.id}}">{{ content.fields.title }}</router-link></li>
+  <ul v-cloak>
+       <li v-for="content in contents"><span><router-link :to="{name:'Article',params:{id:content.sys.id}}">{{ content.fields.title }}</router-link></span>
+       <span>{{content.fields.date}}</span></li>
   </ul>
   <p class="txtcenter"><button class="btn" v-on:click="cancel">Annuler</button></p>
   </div>`,

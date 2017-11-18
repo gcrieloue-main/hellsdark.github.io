@@ -125,3 +125,18 @@ pre{
 [v-cloak]{ 
     display:none; 
 }
+
+#search-results {
+    margin-top:50px;
+}
+
+#search-results ul li {
+    display:flex;
+    justify-content:space-between;
+    list-style-type:none;
+    line-height:3em;
+    vertical-align:middle;
+    border-top : 1px solid #ccc;
+    margin:0;
+    padding:0;
+}
