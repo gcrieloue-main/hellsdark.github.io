@@ -104,7 +104,7 @@ pre{
     color:#1976D2;
     display:inline-block;
     background-color:#eee;
-    width:10em;
+    min-width:10em;
     height:3em;
     border:1px solid;
     border-radius:3px;
