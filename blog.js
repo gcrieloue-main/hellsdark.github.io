@@ -59,6 +59,7 @@ const Article = {
              <h2>{{ content.fields.title }}</h2>
              <div v-html="content.fields.content"></div>
              </article>
+             <p class="txtcenter"><button class="btn" v-on:click="goToList">Liste des articles</button></p>
              </div>`,
   data: () => {
     return {
@@ -74,6 +75,9 @@ const Article = {
       Api.getArticle(this.$route.params.id).then(response => {
         this.content = response;
       });
+    },
+    goToList() {
+      router.push({ path: "/articles" });
     }
   }
 };
