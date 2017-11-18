@@ -118,7 +118,6 @@ const Search = {
       });
     },
     cancel: function(event) {
-      console.log("cancel");
       router.push({ path: `/articles/page/1` });
     }
   }
@@ -131,7 +130,7 @@ const SearchInput = {
   props: ["value"],
   created: function() {
     bus.$on("clearSearch", () => {
-      //this.props.value = "";
+      this.value = "";
     });
   },
   methods: {
