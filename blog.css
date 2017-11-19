@@ -126,7 +126,10 @@ pre{
 #search-results {
     margin-top:50px;
 }
-
+#search-results ul {
+    padding:0;
+    margin:0;
+}
 #search-results ul li {
     display:flex;
     justify-content:space-between;
