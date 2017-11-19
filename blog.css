@@ -100,24 +100,34 @@ pre{
     color:#01579B;
 }
 
-.btn{
-    color:#1976D2;
-    display:inline-block;
-    background-color:#eee;
-    min-width:10em;
-    height:3em;
-    border:1px solid;
-    border-radius:3px;
+.btn {
+    color: #666;
+    position: relative;
+    display: inline-block;
+    background:none;
+    border:0;
     margin:1em;
-    text-align:center;
-    line-height:3em;
-    font-size:1em;
-    text-decoration:none;
-    cursor:pointer;
+    padding:5px;
+    border-bottom:3px solid black;
 }
-.btn:hover,.btn:active,.btn:visited{
-    box-shadow: inset 0px 0px 9px -2px rgba(0,0,0,0.75);
+.btn:after {
+    position: absolute;
+    left: 50%;
+    content: '';
+    height: 3px;
+    background: #01579B;
+    transition: all 0.2s linear;
+    width: 0;
+    bottom: -3px;
 }
+.btn:hover {
+    color:#01579B;
+}
+.btn:hover:after {
+    width: 100%;
+    left: 0px;
+}
+
 
 [v-cloak]{ 
     display:none; 
