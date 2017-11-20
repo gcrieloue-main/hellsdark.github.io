@@ -12,5 +12,8 @@
     "contentful": "^5.0.1",
     "uglifyjs-webpack-plugin": "^1.0.0-beta.2",
     "webpack": "^3.8.1"
+  },
+  "dependencies": {
+    "lodash.debounce": "^4.0.8"
   }
 }

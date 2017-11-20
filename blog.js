@@ -2,7 +2,7 @@ import Vue from "./vue.min.js";
 import VueRouter from "./vue-router.js";
 import Prism from "./prism.js";
 import * as Api from "./api.js";
-//import debounce from "lodash.debounce"
+import debounce from "lodash.debounce";
 
 Vue.use(VueRouter);
 
@@ -100,16 +100,18 @@ const Search = {
     };
   },
   created: function() {
-    bus.$on("search", text => {
-      //todo : optimize with debounce function
-      if (text.length > 2) {
-        this.getContent(text);
-        this.searchEmpty = false;
-      } else {
-        this.searchEmpty = true;
-        this.contents = [];
-      }
-    });
+    bus.$on(
+      "search",
+      debounce(text => {
+        if (text.length > 2) {
+          this.getContent(text);
+          this.searchEmpty = false;
+        } else {
+          this.searchEmpty = true;
+          this.contents = [];
+        }
+      }, 200)
+    );
   },
   beforeRouteLeave: function(to, from, next) {
     bus.$emit("clearSearch");
