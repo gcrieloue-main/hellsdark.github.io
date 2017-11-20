@@ -17,12 +17,13 @@ const Articles = {
   </article>
   <p class="txtcenter">
   <button class="btn" v-on:click="previousPage" v-cloak v-if="page>1">Articles suivants</button>
-  <button class="btn" v-cloak v-on:click="nextPage" v-if="contents.length == 10">Articles précédents</button>
+  <button class="btn" v-cloak v-on:click="nextPage" v-if="contents.length == nbArticles">Articles précédents</button>
   </p></div>`,
   data: () => {
     return {
       contents: [{ fields: { title: "" } }],
-      page: 1
+      page: 1,
+      nbArticles: 6
     };
   },
   created: function() {
@@ -37,7 +38,7 @@ const Articles = {
   updated: Prism.highlightAll,
   methods: {
     getContent(page) {
-      Api.getArticles(page).then(response => {
+      Api.getArticles(page, this.nbArticles).then(response => {
         this.contents = response;
       });
     },

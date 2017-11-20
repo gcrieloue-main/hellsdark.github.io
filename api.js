@@ -14,9 +14,8 @@ var converter = new showdown.Converter({
   simpleLineBreaks: true
 });
 
-export function getArticles(page) {
+export function getArticles(page, nbArticles) {
   page = page || 1;
-  var nbArticles = 10;
   return client
     .getEntries({
       content_type: "article",
