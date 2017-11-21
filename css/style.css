@@ -1,0 +1,132 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    color:#626262;
+}
+@media (min-width: 991px) {
+    main{
+        max-width: 991px;
+    }
+}
+main{
+    margin:0 auto;
+    padding: 0 1rem;
+}
+h1{
+    font-size:3.2rem;
+    text-align: center;
+}
+header h1{
+    margin-bottom:0;
+}
+
+header p{
+    text-align:center;
+    font-size:2.5rem;
+    margin-top:0;
+    margin-bottom:2rem;
+}
+h2{
+    font-size:2.4rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    color:#01579B;
+}
+h4{
+    font-size:1.8rem;
+}
+a{
+    color:#1976D2;
+}
+article{
+    margin-bottom:1em;
+}
+article div{
+    line-height: 140%;
+    font-size:1.6rem;
+}
+@media print  
+{
+    article, #experience {
+        page-break-inside: avoid;
+    }
+}
+#workExperiences {
+    border-left:2px solid #64B5F6;
+    padding-left:2rem;
+}
+.workExperience h3{
+    position:relative;
+    line-height:3rem;
+}
+.workExperience .period{
+    color:#607D8B;
+    font-size:2rem;
+}
+
+.workExperience h3::before{
+    display: inline-block;
+    width:14px;
+    height:14px;
+    border-radius: 14px;
+    content: '';
+    background-color:white;
+    border:2px solid #64B5F6;
+    position:absolute;
+    left:-30px;
+    top:8px;
+    margin-right:12px;
+}
+
+#languages ul{
+    list-style-type:none;
+    padding-left:0.5em;
+}
+#languages img{
+    height:1em;
+    margin-right:0.5em;
+    display:inline;
+}
+.date{
+    position: relative;
+    left:-25px;
+    top:25px;
+    height:50px;
+    width: 50px;
+    border:1px solid #01579B;
+    border-radius: 50%;
+    background-color: #ECEFF1;
+    display: table-cell;
+    /* comportement visuel de cellule */
+    vertical-align: middle;
+    text-align: center;
+    font-weight: bold;
+    color:#01579B;
+}
+aside {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 50px;
+}
+img{
+    display:block;
+    margin:0 auto;
+    border-radius:3px;
+}
+
+#education ul{
+    list-style-type:none;
+    padding:0;
+}
+
+#education ul li{
+    border-left:2px solid #64B5F6;
+    padding-left:1em;
+}
+
+pre{
+    width:100%;
+    overflow:auto;
+}
+
+[v-cloak]{ 
+    display:none; 
+}

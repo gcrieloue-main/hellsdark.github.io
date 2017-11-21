@@ -1,0 +1,164 @@
+@font-face {
+    font-family: 'Nickainley-Normal';
+    src: url('fonts/Nickainley-Normal.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    color:#626262;
+}
+
+#app{
+padding:0 3rem;
+}
+
+main, header{
+    display: block;
+    max-width: 991px;
+    margin:0 auto;
+}
+
+h1{
+    font-family: 'Nickainley-Normal', Arial, Helvetica, sans-serif;
+    font-size:3.2rem;
+}
+h1:hover{
+    color:#01579B;
+    transition:color 0.2s linear;
+}
+
+h2{
+    font-size:2.4rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    color:#01579B;
+}
+
+h4{
+    font-size:1.8rem;
+}
+
+a{
+    color:#1976D2;
+}
+
+header{
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    padding: 1em 0;
+}
+header h1{
+    margin-bottom:0;
+}
+header input{
+    border:0;
+    border-bottom: 2px solid #626262;
+    font-size:1em;
+    padding: 5px;
+    outline:none;
+}
+header a{
+    color:black;
+    text-decoration:none;
+}
+
+article{
+    margin-bottom:1em;
+    margin:1em 0;
+}
+article div{
+    line-height: 140%;
+    font-size:1.6rem;
+}
+article li p{
+    margin:0.5em;
+}
+
+@media print  
+{
+    article {
+        page-break-inside: avoid;
+    }
+}
+
+aside {
+    position:relative;
+    border-bottom: 1px solid #ddd;
+    margin:50px 0 0 0;
+}
+
+img{
+    display:block;
+    margin:0 auto;
+    border-radius:3px;
+}
+
+pre{
+    width:100%;
+    overflow:auto;
+}
+
+
+.date{
+    position: absolute;
+    right:0;
+    height:50px;
+    width: 50px;
+    text-align: center;
+    font-weight: bold;
+    color:#01579B;
+}
+
+.btn {
+    color: #666;
+    position: relative;
+    display: inline-block;
+    background:none;
+    border:0;
+    margin:1em;
+    padding:5px;
+    border-bottom:3px solid black;
+}
+.btn:after {
+    position: absolute;
+    left: 50%;
+    content: '';
+    height: 3px;
+    background: #01579B;
+    transition: all 0.2s linear;
+    width: 0;
+    bottom: -3px;
+}
+.btn:hover {
+    color:#01579B;
+}
+.btn:hover:after {
+    width: 100%;
+    left: 0px;
+}
+
+
+[v-cloak]{ 
+    display:none; 
+}
+
+#search-results {
+    margin-top:50px;
+}
+#search-results ul {
+    padding:0;
+    margin:0;
+}
+#search-results ul li {
+    display:flex;
+    justify-content:space-between;
+    list-style-type:none;
+    line-height:3em;
+    vertical-align:middle;
+    border-top : 1px solid #ccc;
+    margin:0;
+    padding:0;
+}
