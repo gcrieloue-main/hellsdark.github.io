@@ -9,6 +9,7 @@ body{
 }
 main{
     margin:0 auto;
+    padding: 0 1rem;
 }
 h1{
     font-size:3.2rem;
