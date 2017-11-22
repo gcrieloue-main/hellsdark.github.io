@@ -150,7 +150,6 @@ const SearchInput = {
     onSubmit: function(){
       // unfocus the field on submit
       // this way, the virtual keyboard is hidden on mobiles when they press enter
-      console.log(this.$refs);
       this.$refs.search.blur();
     }
   }
