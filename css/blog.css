@@ -144,6 +144,10 @@ pre{
     left: 0px;
 }
 
+.no-articles{
+    font-family: 'Nickainley-Normal', Arial, Helvetica, sans-serif;
+    text-align: center;
+}
 
 [v-cloak]{ 
     display:none; 
