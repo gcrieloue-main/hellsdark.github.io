@@ -28,7 +28,7 @@ const Articles = {
   },
   created: function() {
     this.page = Number(this.$route.params.page) || 1;
-    this.getContent(page);
+    this.getContent(this.page);
   },
   watch: {
     "$route.params.page": function(page) {
