@@ -147,6 +147,8 @@ pre{
 .no-articles{
     font-family: 'Nickainley-Normal', Arial, Helvetica, sans-serif;
     text-align: center;
+    font-size: 5rem;
+    padding: 5rem;
 }
 
 [v-cloak]{ 
