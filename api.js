@@ -11,7 +11,8 @@ const client = contentful.createClient({
 
 var converter = new showdown.Converter({
   headerLevelStart: 4,
-  simpleLineBreaks: true
+  simpleLineBreaks: true,
+  tables: true
 });
 
 export function getArticles(page, nbArticles) {
