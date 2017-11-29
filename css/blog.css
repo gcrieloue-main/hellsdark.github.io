@@ -105,6 +105,9 @@ pre{
     overflow:auto;
 }
 
+thead{
+    backgroun-color: #eee;
+}
 
 .date{
     position: absolute;
