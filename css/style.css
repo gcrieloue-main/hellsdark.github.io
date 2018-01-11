@@ -44,12 +44,6 @@ article div{
     line-height: 140%;
     font-size:1.6rem;
 }
-@media print  
-{
-    article, #experience {
-        page-break-inside: avoid;
-    }
-}
 #cv {
     display: grid;
     grid-gap: 2em;
