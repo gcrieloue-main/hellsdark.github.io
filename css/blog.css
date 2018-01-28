@@ -30,6 +30,7 @@ h1:hover{
 }
 
 h2{
+    margin : 0.8em 0;
     font-size:2.4rem;
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
@@ -112,11 +113,12 @@ thead{
 .date{
     position: absolute;
     right:0;
+    margin : 0.8em 0;
     height:50px;
     width: 50px;
     text-align: center;
     font-weight: bold;
-    color:#01579B;
+    color:#626262;
 }
 
 .btn {
