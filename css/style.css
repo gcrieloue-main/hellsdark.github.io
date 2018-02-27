@@ -35,7 +35,7 @@ h4{
     font-size:1.8rem;
 }
 h4:before {
-    content: "\25C9 ";
+    content: "\25CE ";
     padding-right: 5px;
 }
 a{
