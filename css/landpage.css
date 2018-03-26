@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Nickainley-Normal';
+    src: url('../fonts/Nickainley-Normal.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 body{
     background: linear-gradient(113.04725084522124deg, rgba(226, 235, 239,1) 4.927083333333334%,rgba(208, 218, 224,1) 97.84374999999999%);
     font-family: 'Open Sans', sans-serif;
@@ -30,6 +36,10 @@ div#content{
 main div div{
     margin:0 auto;
     max-width:750px;
+}
+h1{
+    font-family: 'Nickainley-Normal', Arial, Helvetica, sans-serif;
+    font-size:3.2rem;
 }
 h1, footer{
     text-align:center;
