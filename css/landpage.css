@@ -48,6 +48,7 @@ footer i{
 }
 .illustration {
     padding : 0 1rem;
+    max-height: 200px;
 }
 ul{
     list-style-type:none;
