@@ -14,7 +14,7 @@ body{
 padding:0 3rem;
 }
 
-main, header{
+main, .main-header{
     display: block;
     max-width: 991px;
     margin:0 auto;
@@ -49,23 +49,23 @@ a{
     color:#1976D2;
 }
 
-header{
+.main-header{
     display: flex;
     align-content: center;
     justify-content: space-between;
     padding: 1em 0;
 }
-header h1{
+.main-header h1{
     margin-bottom:0;
 }
-header input{
+.main-header input{
     border:0;
     border-bottom: 2px solid #626262;
     font-size:1em;
     padding: 5px;
     outline:none;
 }
-header a{
+.main-header a{
     color:black;
     text-decoration:none;
 }
@@ -110,7 +110,7 @@ thead{
     backgroun-color: #eee;
 }
 
-.date{
+time {
     position: absolute;
     right:0;
     margin: 0.8em 0!important;
