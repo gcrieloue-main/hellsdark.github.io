@@ -59,8 +59,10 @@ const Articles = {
 const Article = {
   router,
   template: `<div><article v-cloak>
-             <aside><p class="date" v-if="content.fields.date!=null">{{content.fields.date}}</p></aside>
-             <h2>{{ content.fields.title }}</h2>
+             <header>
+              <h2>{{ content.fields.title }}</h2>
+              <time v-if="content.fields.date!=null">{{content.fields.date}}</time>
+             </header>
              <div v-html="content.fields.content"></div>
              </article>
              <p class="txtcenter"><button class="btn" v-on:click="goToList">Liste des articles</button></p>
