@@ -111,12 +111,9 @@ thead{
 }
 
 time {
-    position: absolute;
-    right:0;
     margin: 0.8em 0!important;
     height:50px;
     width: 50px;
-    text-align: center;
     font-weight: bold;
     color:#626262;
 }
