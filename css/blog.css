@@ -54,6 +54,7 @@ a{
     align-content: center;
     justify-content: space-between;
     padding: 1em 0;
+    margin-bottom: 4rem;
 }
 .main-header h1{
     margin-bottom:0;
