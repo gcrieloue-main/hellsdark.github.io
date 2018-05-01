@@ -88,6 +88,9 @@ article header{
 }
 article header time{
     order:1;
+    align-self: center;
+    font-weight: bold;
+    color:#626262;
 }
 
 @media print  
@@ -110,14 +113,6 @@ pre{
 
 thead{
     backgroun-color: #eee;
-}
-
-time {
-    margin: 0.8em 0!important;
-    height:50px;
-    width: 50px;
-    font-weight: bold;
-    color:#626262;
 }
 
 .btn {
