@@ -13,8 +13,10 @@ const Articles = {
   template: `<div>
   <p v-if="!contents.length" class="no-articles" v-cloak>That's all folks !</p>
   <article v-for="content in contents" v-cloak>
-  <aside><p class="date" v-if="content.fields.date!=null">{{content.fields.date}}</p></aside>
-  <h2>{{ content.fields.title }}</h2>
+  <header>
+    <time v-if="content.fields.date!=null">{{content.fields.date}}</time>
+    <h2>{{ content.fields.title }}</h2>
+  </header>
   <div v-html="content.fields.content"></div>
   </article>
   <p class="txtcenter">
