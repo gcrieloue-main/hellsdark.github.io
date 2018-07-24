@@ -33,6 +33,7 @@ h2{
 }
 h4{
     font-size:1.8rem;
+    margin : 2rem 0;
 }
 h4:before {
     content: "\25CE ";
