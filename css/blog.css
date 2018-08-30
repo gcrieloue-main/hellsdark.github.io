@@ -10,6 +10,10 @@ body{
     color:#626262;
 }
 
+::selection {
+  background: #CFE3EC;
+}
+
 #app{
 padding:0 3rem;
 }
