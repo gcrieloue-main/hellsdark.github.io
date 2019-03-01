@@ -44,6 +44,7 @@ h2{
 h4{
     font-size:1.8rem;
 }
+
 h5{
     font-size:1.7rem;
     color:#01579B;
@@ -114,6 +115,7 @@ img{
 pre{
     width:100%;
     overflow:auto;
+    border-radius:3px;
 }
 
 thead{
