@@ -11,18 +11,19 @@ const bus = new Vue();
 const Articles = {
   router,
   template: `<div>
-  <p v-if="!contents.length" class="no-articles" v-cloak>That's all folks !</p>
-  <article v-for="content in contents" v-cloak>
-  <header>
-    <time v-if="content.fields.date!=null">{{content.fields.date}}</time>
-    <h2>{{ content.fields.title }}</h2>
-  </header>
-  <div v-html="content.fields.content"></div>
-  </article>
-  <p class="txtcenter">
-  <button class="btn" v-on:click="previousPage" v-cloak v-if="page>1">Articles suivants</button>
-  <button class="btn" v-cloak v-on:click="nextPage" v-if="contents.length == nbArticles">Articles précédents</button>
-  </p></div>`,
+    <p v-if="!contents.length" class="no-articles" v-cloak>That's all folks !</p>
+    <article v-for="content in contents" v-cloak>
+      <header>
+        <time v-if="content.fields.date!=null">{{content.fields.date}}</time>
+        <h2>{{ content.fields.title }}</h2>
+      </header>
+      <div v-html="content.fields.content"></div>
+    </article>
+    <p class="txtcenter">
+      <button class="btn" v-on:click="previousPage" v-cloak v-if="page>1">Articles suivants</button>
+      <button class="btn" v-cloak v-on:click="nextPage" v-if="contents.length == nbArticles">Articles précédents</button>
+    </p>
+  </div>`,
   data: () => {
     return {
       contents: [{ fields: { title: "" } }],
@@ -60,15 +61,16 @@ const Articles = {
 
 const Article = {
   router,
-  template: `<div><article v-cloak>
-             <header>
-              <h2>{{ content.fields.title }}</h2>
-              <time v-if="content.fields.date!=null">{{content.fields.date}}</time>
-             </header>
-             <div v-html="content.fields.content"></div>
-             </article>
-             <p class="txtcenter"><button class="btn" v-on:click="goToList">Liste des articles</button></p>
-             </div>`,
+  template: `<div>
+    <article v-cloak>
+      <header>
+        <h2>{{ content.fields.title }}</h2>
+        <time v-if="content.fields.date!=null">{{content.fields.date}}</time>
+      </header>
+      <div v-html="content.fields.content"></div>
+    </article>
+    <p class="txtcenter"><button class="btn" v-on:click="goToList">Liste des articles</button></p>
+  </div>`,
   data: () => {
     return {
       content: { fields: { title: "" } }
@@ -93,13 +95,13 @@ const Article = {
 const Search = {
   router,
   template: `<div id="search-results">
-  <p v-if="searchEmpty" v-cloak>Que cherchez vous ?</p>
-  <p v-if="!contents.length && !searchEmpty" v-cloak>Aucun résultat</p>
-  <ul v-cloak>
-       <li v-for="content in contents"><span><router-link :to="{name:'Article',params:{id:content.sys.id}}">{{ content.fields.title }}</router-link></span>
-       <span>{{content.fields.date}}</span></li>
-  </ul>
-  <p class="txtcenter"><button class="btn" v-on:click="cancel">Annuler</button></p>
+    <p v-if="searchEmpty" v-cloak>Que cherchez vous ?</p>
+    <p v-if="!contents.length && !searchEmpty" v-cloak>Aucun résultat</p>
+    <ul v-cloak>
+        <li v-for="content in contents"><span><router-link :to="{name:'Article',params:{id:content.sys.id}}">{{ content.fields.title }}</router-link></span>
+        <span>{{content.fields.date}}</span></li>
+    </ul>
+    <p class="txtcenter"><button class="btn" v-on:click="cancel">Annuler</button></p>
   </div>`,
   data: () => {
     return {
@@ -113,7 +115,6 @@ const Search = {
       debounce(text => {
         if (text.length > 2) {
           this.getContent(text);
-          this.searchEmpty = false;
         } else {
           this.searchEmpty = true;
           this.contents = [];
@@ -127,8 +128,10 @@ const Search = {
   },
   methods: {
     getContent(text) {
+      console.log("test");
       Api.searchArticles(text).then(response => {
         this.contents = response;
+        this.searchEmpty = false;
       });
     },
     cancel: function(event) {
@@ -140,7 +143,7 @@ const Search = {
 const SearchInput = {
   router,
   template: `<form v-on:submit.prevent="onSubmit">
-  <p><input ref="search" type="text" placeholder="Rechercher…" v-bind:value="value" v-on:input="search($event.target.value)" /></p>
+    <p><input ref="search" type="text" placeholder="Rechercher…" v-bind:value="value" v-on:input="search($event.target.value)" /></p>
   </form>`,
   props: ["value"],
   created: function() {
