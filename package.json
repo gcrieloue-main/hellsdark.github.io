@@ -4,18 +4,20 @@
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "watch": "webpack --config webpack.config.js --watch",
-    "dev": "lite-server"
+    "start": "webpack-dev-server --hot"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.31",
     "@babel/preset-env": "^7.0.0-beta.31",
     "babel-loader": "^8.0.0-beta.0",
-    "contentful": "^5.0.1",
     "lite-server": "^2.3.0",
     "uglifyjs-webpack-plugin": "^1.0.0-beta.2",
-    "webpack": "^3.8.1"
+    "webpack": "^4.30.0",
+    "webpack-dev-server": "^3.3.1",
+    "webpack-cli": "^3.3.2"
   },
   "dependencies": {
-    "lodash.debounce": "^4.0.8"
+    "lodash.debounce": "^4.0.8",
+    "contentful": "^5.0.1"
   }
 }

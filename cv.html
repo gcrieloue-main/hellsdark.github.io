@@ -15,21 +15,21 @@
             </header>
             <main id="cv">
                 <section class="side">
-                    <article id=about" class="about">
+                    <article id="about" class="about" v-if="paragraphs[0]">
                         <h2>A propos de moi</h2>
                         <div v-cloak v-html="paragraphs[0].fields.text"></div>
                     </article>
-                    <article id="skills">
+                    <article id="skills" v-if="paragraphs[1]">
                         <h2>Compétences</h2>
                         <div v-cloak v-html="paragraphs[1].fields.text"></div>
                     </article>
-                    <article id="languages">
+                    <article id="languages" v-if="paragraphs[3]">
                         <h2>Langues</h2>
                         <div v-cloak v-html="paragraphs[3].fields.text"></div>
                     </article>
                 </section>
                 <section id="cv-content">
-                    <article id="education">
+                    <article id="education" v-if="paragraphs[2]">
                         <h2>Formation</h2>
                         <div v-cloak v-html="paragraphs[2].fields.text"></div>
                     </article>

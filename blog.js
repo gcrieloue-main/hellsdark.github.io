@@ -139,8 +139,7 @@ const Search = {
 
 const SearchInput = {
   router,
-  template:
-    `<form v-on:submit.prevent="onSubmit">
+  template: `<form v-on:submit.prevent="onSubmit">
   <p><input ref="search" type="text" placeholder="Rechercher…" v-bind:value="value" v-on:input="search($event.target.value)" /></p>
   </form>`,
   props: ["value"],
@@ -154,7 +153,7 @@ const SearchInput = {
       router.push({ path: `/search` });
       bus.$emit("search", value);
     },
-    onSubmit: function(){
+    onSubmit: function() {
       // unfocus the field on submit
       // this way, the virtual keyboard is hidden on mobiles when they press enter
       this.$refs.search.blur();

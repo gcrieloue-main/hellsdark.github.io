@@ -1,5 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 const config = {
   entry: {
@@ -10,11 +11,9 @@ const config = {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].bundle.js"
   },
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      uglifyOptions: { ecma: 8, sourceMap: true, comments: false }
-    })
-  ],
+  optimization: {
+    minimizer: [new UglifyJsPlugin()]
+  },
   module: {
     rules: [
       {
