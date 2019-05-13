@@ -103,10 +103,6 @@ ul li a i {
   border-radius: 3px;
 }
 
-.cv-links a:first-child {
-  border-right: 1px solid #ccc;
-}
-
 .cv-links a {
   display: inline-block;
   height: 3em;
@@ -116,7 +112,10 @@ ul li a i {
   font-size: 1em;
   text-decoration: none;
 }
-.cv-links a:hover,
+.cv-links a:hover {
+  background-color: #eee;
+  transition: background-color 0.5s ease;
+}
 .cv-links a:active,
 .cv-links a:visited {
 }
