@@ -37,6 +37,7 @@ div#availability {
   border-radius: 5px;
 }
 div#content {
+  margin : auto;
 }
 
 h1 {
