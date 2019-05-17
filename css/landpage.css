@@ -15,6 +15,7 @@ main {
   flex-direction : column;
   justify-content : space-between;
   text-align: center;
+  height:100%;
 }
 main div div {
   margin: 0 auto;
