@@ -55,10 +55,13 @@ footer {
 footer i {
   margin-right: 0.5rem;
 }
+
 .illustration {
   padding: 0 1rem;
-  max-height: 200px;
   text-align:center;
+}
+.illustration img {
+   max-height: 200px;
 }
 
 ul {
