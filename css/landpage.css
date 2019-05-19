@@ -29,7 +29,7 @@ main div div {
 div#content,
 div#availability {
   text-align: left;
-  padding: 1rem 3rem;
+  padding: 0 3rem;
 }
 div#availability {
   border-radius: 5px;
