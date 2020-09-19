@@ -34,14 +34,14 @@ export function getArticle(id) {
   console.log("id " + id);
   return client
     .getEntry(id)
-    .then((article) => processArticle(article))
+    .then(processArticle)
     .catch((error) => {
       console.error(error);
     });
 }
 
 export function searchArticles(text) {
-  var nbArticles = 10;
+  const nbArticles = 10;
   return client
     .getEntries({
       content_type: "article",
@@ -80,6 +80,9 @@ function replaceSmileys(text) {
     .replace(/:D/g, "😄");
 }
 
+const formatDate = (date) =>
+  ("0" + (date.getMonth() + 1)).slice(-2) + "/" + date.getFullYear();
+
 export function getWorkExperiences() {
   return client
     .getEntries({
@@ -90,12 +93,8 @@ export function getWorkExperiences() {
       response.items.map(function (element) {
         const begin = new Date(element.fields.periodBegin);
         const end = new Date(element.fields.periodEnd);
-        const beginDate =
-          ("0" + (begin.getMonth() + 1)).slice(-2) + "/" + begin.getFullYear();
-        let endDate =
-          end >= new Date()
-            ? "Aujourd'hui"
-            : ("0" + (end.getMonth() + 1)).slice(-2) + "/" + end.getFullYear();
+        const beginDate = formatDate(begin);
+        let endDate = end >= new Date() ? "Aujourd'hui" : formatDate(end);
         element.fields.begin = beginDate;
         element.fields.end = endDate;
         element.fields.description = converter.makeHtml(
@@ -116,7 +115,7 @@ export function getCvParagraphs() {
       order: "sys.createdAt",
     })
     .then((response) =>
-      response.items.map(function (element) {
+      response.items.map((element) => {
         element.fields.text = converter.makeHtml(element.fields.text);
         return element;
       })
