@@ -4,12 +4,12 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 const config = {
   entry: {
-    blog: "./blog.js",
-    cv: "./cv.js"
+    blog: "./js/blog.js",
+    cv: "./js/cv.js"
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "[name].bundle.js"
+    filename: "./js/[name].bundle.js"
   },
   optimization: {
     minimizer: [new UglifyJsPlugin()]
