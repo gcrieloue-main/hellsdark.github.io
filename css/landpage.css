@@ -118,7 +118,7 @@ ul li a i {
 @keyframes move-up {
   0% {
     position: relative;
-    top: 100px;
+    top: 50px;
   }
   100% {
     position: relative;
