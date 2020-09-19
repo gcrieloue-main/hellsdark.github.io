@@ -115,7 +115,19 @@ ul li a i {
   }
 }
 
+@keyframes move-up {
+  0% {
+    position: relative;
+    top: 100px;
+  }
+  100% {
+    position: relative;
+    top: 0;
+  }
+}
+
 .cv-links {
+  animation: move-up 0.5s ease-in-out forwards;
   display: inline-block;
   background-color: white;
   margin-top: 1em;
