@@ -5,14 +5,14 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const config = {
   entry: {
     blog: "./js/blog.js",
-    cv: "./js/cv.js"
+    cv: "./js/cv.js",
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "./js/[name].bundle.js"
+    filename: "./[name].bundle.js",
   },
   optimization: {
-    minimizer: [new UglifyJsPlugin()]
+    minimizer: [new UglifyJsPlugin()],
   },
   module: {
     rules: [
@@ -22,12 +22,12 @@ const config = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-env"]
-          }
-        }
-      }
-    ]
-  }
+            presets: ["@babel/preset-env"],
+          },
+        },
+      },
+    ],
+  },
 };
 
 module.exports = config;

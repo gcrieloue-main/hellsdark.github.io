@@ -100,6 +100,32 @@ article header time {
   color: #626262;
 }
 
+article.skeleton {
+  height: 200px;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(#ddd 40px, transparent 0),
+    linear-gradient(#ddd 40px, transparent 0),
+    linear-gradient(#ddd 40px, transparent 0),
+    linear-gradient(#ddd 40px, transparent 0);
+  background-size: 30% 32px, 100% 24px, 100% 24px, 100% 24px;
+  background-position: 0 1em, 0 70px, 0 110px, 0 150px;
+
+  animation: loading 3s infinite;
+}
+
+@keyframes loading {
+  0% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.2;
+    background-size: 30% 32px, 70% 24px, 50% 24px, 80% 24px;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @media print {
   article {
     page-break-inside: avoid;

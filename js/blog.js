@@ -12,6 +12,11 @@ const Articles = {
   router,
   template: `<div>
     <p v-if="!contents.length" class="no-articles" v-cloak>That's all folks !</p>
+    <div v-if="isLoading">
+    <article class="skeleton"></article>
+    <article class="skeleton"></article>
+    <article class="skeleton"></article>
+    </div>
     <article v-for="content in contents" v-cloak>
       <header>
         <time v-if="content.fields.date!=null">{{content.fields.date}}</time>
@@ -28,23 +33,26 @@ const Articles = {
     return {
       contents: [{ fields: { title: "" } }],
       page: 1,
-      nbArticles: 6
+      nbArticles: 6,
+      isLoading: false,
     };
   },
-  created: function() {
+  created: function () {
     this.page = Number(this.$route.params.page) || 1;
     this.getContent(this.page);
   },
   watch: {
-    "$route.params.page": function(page) {
+    "$route.params.page": function (page) {
       this.page = Number(this.$route.params.page) || 1;
       this.getContent(page);
-    }
+    },
   },
   updated: Prism.highlightAll,
   methods: {
     getContent(page) {
-      Api.getArticles(page, this.nbArticles).then(response => {
+      this.isLoading = true;
+      Api.getArticles(page, this.nbArticles).then((response) => {
+        this.isLoading = false;
         this.contents = response;
       });
     },
@@ -55,8 +63,8 @@ const Articles = {
       if (this.page > 1) {
         router.push({ path: `/articles/page/${--this.page}` });
       }
-    }
-  }
+    },
+  },
 };
 
 const Article = {
@@ -73,23 +81,23 @@ const Article = {
   </div>`,
   data: () => {
     return {
-      content: { fields: { title: "" } }
+      content: { fields: { title: "" } },
     };
   },
-  created: function() {
+  created: function () {
     this.getContent();
   },
   updated: Prism.highlightAll,
   methods: {
     getContent() {
-      Api.getArticle(this.$route.params.id).then(response => {
+      Api.getArticle(this.$route.params.id).then((response) => {
         this.content = response;
       });
     },
     goToList() {
       router.push({ path: "/articles" });
-    }
-  }
+    },
+  },
 };
 
 const Search = {
@@ -106,13 +114,13 @@ const Search = {
   data: () => {
     return {
       contents: [],
-      searchEmpty: true
+      searchEmpty: true,
     };
   },
-  created: function() {
+  created: function () {
     bus.$on(
       "search",
-      debounce(text => {
+      debounce((text) => {
         if (text.length > 2) {
           this.getContent(text);
         } else {
@@ -122,22 +130,22 @@ const Search = {
       }, 200)
     );
   },
-  beforeRouteLeave: function(to, from, next) {
+  beforeRouteLeave: function (to, from, next) {
     bus.$emit("clearSearch");
     next();
   },
   methods: {
     getContent(text) {
       console.log("test");
-      Api.searchArticles(text).then(response => {
+      Api.searchArticles(text).then((response) => {
         this.contents = response;
         this.searchEmpty = false;
       });
     },
-    cancel: function(event) {
+    cancel: function (event) {
       router.push({ path: `/articles/page/1` });
-    }
-  }
+    },
+  },
 };
 
 const SearchInput = {
@@ -146,22 +154,22 @@ const SearchInput = {
     <p><input ref="search" type="text" placeholder="Rechercher…" v-bind:value="value" v-on:input="search($event.target.value)" /></p>
   </form>`,
   props: ["value"],
-  created: function() {
+  created: function () {
     bus.$on("clearSearch", () => {
       this.value = "";
     });
   },
   methods: {
-    search: function(value) {
+    search: function (value) {
       router.push({ path: `/search` });
       bus.$emit("search", value);
     },
-    onSubmit: function() {
+    onSubmit: function () {
       // unfocus the field on submit
       // this way, the virtual keyboard is hidden on mobiles when they press enter
       this.$refs.search.blur();
-    }
-  }
+    },
+  },
 };
 
 const routes = [
@@ -169,14 +177,14 @@ const routes = [
   { name: "ArticlesPage", path: "/articles/page/:page", component: Articles },
   { name: "Article", path: "/article/:id", component: Article },
   { name: "Search", path: "/search", component: Search },
-  { path: "*", redirect: "/articles" }
+  { path: "*", redirect: "/articles" },
 ];
 
 const router = new VueRouter({
   routes,
   scrollBehavior(to, from, savedPosition) {
     return { x: 0, y: 0 };
-  }
+  },
 });
 
 Vue.use(router);
@@ -188,6 +196,6 @@ const app = new Vue({
     articles: Articles,
     article: Article,
     search: Search,
-    "search-input": SearchInput
-  }
+    "search-input": SearchInput,
+  },
 });
