@@ -109,8 +109,9 @@ article.skeleton {
     linear-gradient(#ddd 40px, transparent 0),
     linear-gradient(#ddd 40px, transparent 0),
     linear-gradient(#ddd 40px, transparent 0);
-  background-size: 30% 32px, 100% 24px, 100% 24px, 100% 24px;
-  background-position: 0 1em, 0 70px, 0 110px, 0 150px;
+  background-size: 30% 32px, calc(100% - 1rem) 24px, calc(100% - 1rem) 24px,
+    calc(100% - 1rem) 24px;
+  background-position: 1rem 1em, 1rem 70px, 1rem 110px, 1rem 150px;
 
   animation: loading 3s infinite;
 }
