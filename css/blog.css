@@ -78,9 +78,11 @@ a {
 }
 
 article {
-  margin: 1em 0;
+  position: relative;
   margin-bottom: 5rem;
-  border-top: 1px solid #eee;
+  padding: 0 1rem 2rem 1rem;
+  border-radius: 5px;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 article div {
   line-height: 140%;
