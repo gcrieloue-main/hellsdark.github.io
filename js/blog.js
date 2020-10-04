@@ -13,9 +13,9 @@ const Articles = {
   template: `<div>
     <p v-if="!contents.length" class="no-articles" v-cloak>That's all folks !</p>
     <div v-if="isLoading">
-    <article class="skeleton"></article>
-    <article class="skeleton"></article>
-    <article class="skeleton"></article>
+      <article class="skeleton"></article>
+      <article class="skeleton"></article>
+      <article class="skeleton"></article>
     </div>
     <article v-for="content in contents" v-cloak>
       <header>
@@ -31,7 +31,7 @@ const Articles = {
   </div>`,
   data: () => {
     return {
-      contents: [{ fields: { title: "" } }],
+      contents: [],
       page: 1,
       nbArticles: 6,
       isLoading: false,
