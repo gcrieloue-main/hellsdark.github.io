@@ -208,3 +208,25 @@ thead {
   margin: 0;
   padding: 0;
 }
+
+#search-results .loading {
+  height: 22px;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(#ddd 40px, transparent 0);
+  background-size: 0% 16px;
+  background-position: 1rem 0;
+  animation: search-loading 1s infinite;
+}
+
+@keyframes search-loading {
+  0% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.2;
+    background-size: 100% 16px;
+  }
+  100% {
+    opacity: 1;
+  }
+}

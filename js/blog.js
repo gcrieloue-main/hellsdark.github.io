@@ -103,8 +103,9 @@ const Article = {
 const Search = {
   router,
   template: `<div id="search-results">
-    <p v-if="searchEmpty" v-cloak>Que cherchez vous ?</p>
-    <p v-if="!contents.length && !searchEmpty" v-cloak>Aucun résultat</p>
+    <p v-if="isLoading" v-cloak class="loading"></p>
+    <p v-if="!isLoading && searchEmpty" v-cloak>Que cherchez vous ?</p>
+    <p v-if="!isLoading && !contents.length && !searchEmpty" v-cloak>Aucun résultat</p>
     <ul v-cloak>
         <li v-for="content in contents"><span><router-link :to="{name:'Article',params:{id:content.sys.id}}">{{ content.fields.title }}</router-link></span>
         <span>{{content.fields.date}}</span></li>
@@ -115,6 +116,7 @@ const Search = {
     return {
       contents: [],
       searchEmpty: true,
+      isLoading: false,
     };
   },
   created: function () {
@@ -136,8 +138,10 @@ const Search = {
   },
   methods: {
     getContent(text) {
-      console.log("test");
+      this.contents = [];
+      this.isLoading = true;
       Api.searchArticles(text).then((response) => {
+        this.isLoading = false;
         this.contents = response;
         this.searchEmpty = false;
       });
