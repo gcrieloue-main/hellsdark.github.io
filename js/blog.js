@@ -11,7 +11,7 @@ const bus = new Vue();
 const Articles = {
   router,
   template: `<div>
-    <p v-if="!contents.length" class="no-articles" v-cloak>That's all folks !</p>
+    <p v-if="!isLoading && !contents.length" class="no-articles" v-cloak>That's all folks !</p>
     <div v-if="isLoading">
       <article class="skeleton"></article>
       <article class="skeleton"></article>
