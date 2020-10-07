@@ -4,7 +4,7 @@ import * as Api from "./api.js";
 const cv = new Vue({
   el: "#cv",
   data: {
-    workExperiences: [{ fields: { title: "" } }],
+    workExperiences: [],
     paragraphs: {},
   },
   created: function () {
