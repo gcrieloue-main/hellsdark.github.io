@@ -80,7 +80,7 @@ a {
 article {
   position: relative;
   margin-bottom: 5rem;
-  padding: 0 1rem 2rem 1rem;
+  padding: 0 2rem 2rem 2rem;
   border-radius: 5px;
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
