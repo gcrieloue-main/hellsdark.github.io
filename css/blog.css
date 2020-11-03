@@ -82,6 +82,7 @@ article {
   margin-bottom: 5rem;
   padding: 0 2rem 2rem 2rem;
   border-radius: 5px;
+  background-color: white;
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 article div {
