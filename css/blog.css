@@ -25,6 +25,12 @@ main,
   margin: 0 auto;
 }
 
+.main-header form {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
 h1 {
   font-family: "Nickainley-Normal", Arial, Helvetica, sans-serif;
   font-size: 3.2rem;
