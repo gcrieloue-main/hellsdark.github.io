@@ -2,9 +2,9 @@ body {
   font-family: "Open Sans", sans-serif;
   color: #626262;
 }
-@media (min-width: 991px) {
+@media (min-width: 1024px) {
   main {
-    max-width: 991px;
+    max-width: 1024px;
   }
 }
 main {
