@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "https://gilles.crieloue.fr/tools/chrono/build/static/css/main.535d5c42.chunk.css",
-    "main.js": "https://gilles.crieloue.fr/tools/chrono/build/static/js/main.7f69d0ef.chunk.js",
-    "main.js.map": "https://gilles.crieloue.fr/tools/chrono/build/static/js/main.7f69d0ef.chunk.js.map",
+    "main.js": "https://gilles.crieloue.fr/tools/chrono/build/static/js/main.c0eba3e1.chunk.js",
+    "main.js.map": "https://gilles.crieloue.fr/tools/chrono/build/static/js/main.c0eba3e1.chunk.js.map",
     "runtime-main.js": "https://gilles.crieloue.fr/tools/chrono/build/static/js/runtime-main.461b769d.js",
     "runtime-main.js.map": "https://gilles.crieloue.fr/tools/chrono/build/static/js/runtime-main.461b769d.js.map",
     "static/js/2.d270384b.chunk.js": "https://gilles.crieloue.fr/tools/chrono/build/static/js/2.d270384b.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.461b769d.js",
     "static/js/2.d270384b.chunk.js",
     "static/css/main.535d5c42.chunk.css",
-    "static/js/main.7f69d0ef.chunk.js"
+    "static/js/main.c0eba3e1.chunk.js"
   ]
 }

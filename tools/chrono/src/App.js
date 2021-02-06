@@ -14,8 +14,8 @@ function App() {
   const THROTTLE_MOUSE_EVENTS_TIME = 500
 
   /* use stateRef to store the lastMouseMove 
-                    and retrieve the up to date state value 
-                    in the callback for hiding the buttons */
+                        and retrieve the up to date state value 
+                        in the callback for hiding the buttons */
   stateRef.current = lastMouseMove
 
   const twoDigits = (i) => ('0' + i).slice(-2)
@@ -27,6 +27,18 @@ function App() {
         setLastMouseMove(Date.now())
       }, THROTTLE_MOUSE_EVENTS_TIME)
     )
+    window.addEventListener('keyup', (event) => {
+      switch (event.key) {
+        case 'r':
+          reset()
+          break
+        case ' ':
+          togglePlay()
+          break
+        default:
+          break
+      }
+    })
     // setDate(new Date())
   }, [])
 
