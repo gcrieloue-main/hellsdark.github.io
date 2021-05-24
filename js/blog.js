@@ -9,8 +9,8 @@ Vue.use(VueRouter)
 const bus = new Vue()
 
 const Articles = {
-  router,
-  template: `<div>
+    router,
+    template: `<div>
     <p v-if="!isLoading && !contents.length" class="no-articles" v-cloak>That's all folks !</p>
     <div v-if="isLoading">
       <article class="skeleton"></article>
@@ -29,50 +29,50 @@ const Articles = {
       <button class="btn" v-cloak v-on:click="nextPage" v-if="contents.length == nbArticles">Articles précédents</button>
     </p>
   </div>`,
-  data: () => {
-    return {
-      contents: [],
-      page: 1,
-      nbArticles: 6,
-      isLoading: false,
-    }
-  },
-  created: function () {
-    this.page = Number(this.$route.params.page) || 1
-    this.getContent(this.page)
-  },
-  watch: {
-    '$route.params.page': function (page) {
-      this.page = Number(this.$route.params.page) || 1
-      this.getContent(page)
+    data: () => {
+        return {
+            contents: [],
+            page: 1,
+            nbArticles: 6,
+            isLoading: false,
+        }
     },
-  },
-  updated: Prism.highlightAll,
-  methods: {
-    openArticle(content) {
-      router.push({ path: `/article/${content.fields.slug || content.sys.id}` })
+    created: function () {
+        this.page = Number(this.$route.params.page) || 1
+        this.getContent(this.page)
     },
-    getContent(page) {
-      this.isLoading = true
-      Api.getArticles(page, this.nbArticles).then((response) => {
-        this.isLoading = false
-        this.contents = response
-      })
+    watch: {
+        '$route.params.page': function (page) {
+            this.page = Number(this.$route.params.page) || 1
+            this.getContent(page)
+        },
     },
-    nextPage() {
-      router.push({ path: `/articles/page/${++this.page}` })
+    updated: Prism.highlightAll,
+    methods: {
+        openArticle(content) {
+            router.push({path: `/article/${content.fields.slug || content.sys.id}`})
+        },
+        getContent(page) {
+            this.isLoading = true
+            Api.getArticles(page, this.nbArticles).then((response) => {
+                this.isLoading = false
+                this.contents = response
+            })
+        },
+        nextPage() {
+            router.push({path: `/articles/page/${++this.page}`})
+        },
+        previousPage() {
+            if (this.page > 1) {
+                router.push({path: `/articles/page/${--this.page}`})
+            }
+        },
     },
-    previousPage() {
-      if (this.page > 1) {
-        router.push({ path: `/articles/page/${--this.page}` })
-      }
-    },
-  },
 }
 
 const Article = {
-  router,
-  template: `<div>
+    router,
+    template: `<div>
     <article v-cloak>
       <header>
         <h2>{{ content.fields.title }}</h2>
@@ -82,30 +82,30 @@ const Article = {
     </article>
     <p class="txtcenter"><button class="btn" v-on:click="goToList">Liste des articles</button></p>
   </div>`,
-  data: () => {
-    return {
-      content: { fields: { title: '' } },
-    }
-  },
-  created: function () {
-    this.getContent()
-  },
-  updated: Prism.highlightAll,
-  methods: {
-    getContent() {
-      Api.getArticle(this.$route.params.id).then((response) => {
-        this.content = response
-      })
+    data: () => {
+        return {
+            content: {fields: {title: ''}},
+        }
     },
-    goToList() {
-      router.push({ path: '/articles' })
+    created: function () {
+        this.getContent()
     },
-  },
+    updated: Prism.highlightAll,
+    methods: {
+        getContent() {
+            Api.getArticle(this.$route.params.id).then((response) => {
+                this.content = response
+            })
+        },
+        goToList() {
+            router.push({path: '/articles'})
+        },
+    },
 }
 
 const Search = {
-  router,
-  template: `<div id="search-results">
+    router,
+    template: `<div id="search-results">
     <p v-if="isLoading" v-cloak class="loading"></p>
     <p v-if="!isLoading && searchEmpty" v-cloak>Que cherchez vous ?</p>
     <p v-if="!isLoading && !contents.length && !searchEmpty" v-cloak>Aucun résultat</p>
@@ -115,94 +115,105 @@ const Search = {
     </ul>
     <p class="txtcenter"><button class="btn" v-on:click="cancel">Annuler</button></p>
   </div>`,
-  data: () => {
-    return {
-      contents: [],
-      searchEmpty: true,
-      isLoading: false,
-    }
-  },
-  created: function () {
-    bus.$on(
-      'search',
-      debounce((text) => {
-        if (text.length > 2) {
-          this.getContent(text)
-        } else {
-          this.searchEmpty = true
-          this.contents = []
+    data: () => {
+        return {
+            contents: [],
+            searchEmpty: true,
+            isLoading: false,
         }
-      }, 200)
-    )
-  },
-  beforeRouteLeave: function (to, from, next) {
-    bus.$emit('clearSearch')
-    next()
-  },
-  methods: {
-    getContent(text) {
-      this.contents = []
-      this.isLoading = true
-      Api.searchArticles(text).then((response) => {
-        this.isLoading = false
-        this.contents = response
-        this.searchEmpty = false
-      })
     },
-    cancel: function (event) {
-      router.push({ path: `/articles/page/1` })
+    created: function () {
+        bus.$on(
+            'search',
+            debounce((text) => {
+                if (text.length > 2) {
+                    this.getContent(text)
+                } else {
+                    this.searchEmpty = true
+                    this.contents = []
+                }
+            }, 200)
+        )
     },
-  },
+    beforeRouteLeave: function (to, from, next) {
+        bus.$emit('clearSearch')
+        next()
+    },
+    methods: {
+        getContent(text) {
+            this.contents = []
+            this.isLoading = true
+            Api.searchArticles(text).then((response) => {
+                this.isLoading = false
+                this.contents = response
+                this.searchEmpty = false
+            })
+        },
+        cancel: function (event) {
+            router.push({path: `/articles/page/1`})
+        },
+    },
 }
 
 const SearchInput = {
-  router,
-  template: `<form v-on:submit.prevent="onSubmit">
+    router,
+    template: `<form v-on:submit.prevent="onSubmit">
     <p><input ref="search" type="text" placeholder="Rechercher…" v-bind:value="value" v-on:input="search($event.target.value)" /></p>
   </form>`,
-  props: ['value'],
-  created: function () {
-    bus.$on('clearSearch', () => {
-      this.value = ''
-    })
-  },
-  methods: {
-    search: function (value) {
-      router.push({ path: `/search` })
-      bus.$emit('search', value)
+    props: ['value'],
+    created: function () {
+        bus.$on('clearSearch', () => {
+            this.value = ''
+        })
     },
-    onSubmit: function () {
-      // unfocus the field on submit
-      // this way, the virtual keyboard is hidden on mobiles when they press enter
-      this.$refs.search.blur()
+    methods: {
+        search: function (value) {
+            router.push({path: `/search`})
+            bus.$emit('search', value)
+        },
+        onSubmit: function () {
+            // unfocus the field on submit
+            // this way, the virtual keyboard is hidden on mobiles when they press enter
+            this.$refs.search.blur()
+        },
     },
-  },
 }
 
 const routes = [
-  { name: 'Articles', path: '/articles', component: Articles },
-  { name: 'ArticlesPage', path: '/articles/page/:page', component: Articles },
-  { name: 'Article', path: '/article/:id', component: Article },
-  { name: 'Search', path: '/search', component: Search },
-  { path: '*', redirect: '/articles' },
+    {name: 'Articles', path: '/articles', component: Articles},
+    {name: 'ArticlesPage', path: '/articles/page/:page', component: Articles},
+    {name: 'Article', path: '/article/:id', component: Article},
+    {name: 'Search', path: '/search', component: Search},
+    {path: '*', redirect: '/articles'},
 ]
 
 const router = new VueRouter({
-  routes,
-  scrollBehavior(to, from, savedPosition) {
-    return { x: 0, y: 0 }
-  },
+    routes,
+    scrollBehavior(to, from, savedPosition) {
+        return {x: 0, y: 0}
+    },
+})
+
+router.beforeEach((to, from, next) => {
+    const urlId = to?.params?.id
+    if (urlId) {
+        let separator = ' / ';
+        document.title = document.title.includes(separator)
+            ? `${document.title.substring(0, document.title.indexOf(separator))}${separator}${urlId}`
+            : `${document.title}${separator}${urlId}`
+    }
+    next()
 })
 
 Vue.use(router)
 
 const app = new Vue({
-  el: '#app',
-  router,
-  components: {
-    articles: Articles,
-    article: Article,
-    search: Search,
-    'search-input': SearchInput,
-  },
+    el: '#app',
+    router,
+    components: {
+        articles: Articles,
+        article: Article,
+        search: Search,
+        'search-input': SearchInput,
+    },
 })
