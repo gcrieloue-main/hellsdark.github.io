@@ -196,11 +196,16 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
     const urlId = to?.params?.id
+    const separator = ' / ';
     if (urlId) {
-        let separator = ' / ';
         document.title = document.title.includes(separator)
             ? `${document.title.substring(0, document.title.indexOf(separator))}${separator}${urlId}`
             : `${document.title}${separator}${urlId}`
+    }
+    else {
+        document.title = document.title.includes(separator)
+            ? `${document.title.substring(0, document.title.indexOf(separator))}`
+            : `${document.title}`
     }
     next()
 })
