@@ -1,9 +1,8 @@
 body {
   color: #626262;
-  --primary-100: hsl(201 99% 31%);
-  --primary-200: hsl(210 79% 46%);
-  --primary-250: hsl(206deg 99% 31%);
-  --primary-300: hsl(207 89% 68%);
+  --primary-100: hsl(210 100% 60%);
+  --primary-200: hsl(210 79% 50%);
+  --primary-300: hsl(210 79% 40%);
 }
 @media (min-width: 1024px) {
   main {
@@ -33,7 +32,7 @@ h2 {
   font-size: 2.4rem;
   font-family: "Roboto", sans-serif;
   font-weight: 100;
-  color: var(--primary-100);
+  color: var(--primary-200);
 }
 h4 {
   font-size: 1.8rem;
@@ -71,7 +70,7 @@ article div {
   grid-column: 1/3;
 }
 #workExperiences {
-  border-left: 2px solid var(--primary-300);
+  border-left: 2px solid var(--primary-100);
   padding-left: 2rem;
 }
 .workExperience h3 {
@@ -79,7 +78,7 @@ article div {
   line-height: 3rem;
 }
 .workExperience .period {
-  color: #607d8b;
+  color: var(--primary-300);
   font-size: 2rem;
 }
 
@@ -90,7 +89,7 @@ article div {
   border-radius: 14px;
   content: "";
   background-color: white;
-  border: 2px solid #64b5f6;
+  border: 2px solid var(--primary-100);
   position: absolute;
   left: -28px;
   top: 11px;
@@ -106,22 +105,7 @@ article div {
   margin-right: 0.5em;
   display: inline;
 }
-.date {
-  position: relative;
-  left: -25px;
-  top: 25px;
-  height: 50px;
-  width: 50px;
-  border: 1px solid var(--primary-250);
-  border-radius: 50%;
-  background-color: #eceff1;
-  display: table-cell;
-  /* comportement visuel de cellule */
-  vertical-align: middle;
-  text-align: center;
-  font-weight: bold;
-  color: var(--primary-250);
-}
+
 aside {
   border-bottom: 1px solid #ddd;
   margin-bottom: 50px;
@@ -138,7 +122,7 @@ img {
 }
 
 #education ul li {
-  border-left: 2px solid var(--primary-300);
+  border-left: 2px solid var(--primary-100);
   padding-left: 1em;
 }
 
