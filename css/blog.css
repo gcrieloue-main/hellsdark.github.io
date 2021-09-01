@@ -65,6 +65,10 @@ a {
   color: #1976d2;
 }
 
+.p-like, blockquote, caption, details, dl, figure, label, ol, p, pre, td, textarea, th, ul {
+    line-height: 1.7;
+}
+
 .main-header {
   display: flex;
   align-content: center;
