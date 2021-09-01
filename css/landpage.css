@@ -90,6 +90,10 @@ ul li a i {
   text-decoration: none;
 }
 
+.p-like, blockquote, caption, details, dl, figure, label, ol, p, pre, td, textarea, th, ul {
+    line-height: 1.7;
+}
+
 #content {
   animation: slide-up 0.5s ease-in-out forwards;
 }
