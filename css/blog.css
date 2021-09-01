@@ -67,6 +67,8 @@ a {
 
 .p-like, blockquote, caption, details, dl, figure, label, ol, p, pre, td, textarea, th, ul {
     line-height: 1.7;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .main-header {
