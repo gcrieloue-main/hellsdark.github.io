@@ -6,39 +6,47 @@
 }
 
 body {
-  --primary-100 : hsl(206 99% 31%);
-  --primary-200 : hsl(210 79% 46%);
-  --h1-hover-color: hsl(206, 99%, 31%);
+  --accent-color-100: hsl(206 99% 31%);
+  --accent-color-200: hsl(210 79% 46%);
+  --primary-100 : var(--accent-color-100);
+  --primary-200 : var(--accent-color-200);
+  --h1-hover-color: var(--accent-color-100);
   --selection-color: hsl(199, 43%, 87%);
   --secondary-100 : hsl(0, 0%, 38%);
   --secondary-200 : hsl(0, 0%, 0%);
-  --background-color: hsl(0, 0%, 100%);
+  --background-color-100: hsl(0, 0%, 100%);
+  --background-color-200: hsl(0, 0%, 100%);
   --thead-background-color: hsl(0, 0%, 93%);
   --separation-color: hsl(0, 0%, 80%);
   --loading-content-color: hsl(0, 0%, 87%);
   --title-color: black;
   --link-hover-color : black;
-  --button-color: #666;
   --box-shadow: rgba(17, 12, 46, 0.10) 0px 10px 50px 0px;
+  --button-color: var(--secondary-100);
+  --accent-color: var(--accent-color-100);
   color: var(--secondary-100);
-  background: var(--background-color);
+  background: var(--background-color-100);
 }
 
-body.dark-theme {
-  --primary-100 : hsl(0 0% 80%);
-  --primary-200 : hsl(0 0% 80%);
-  --h1-hover-color: hsl(0 0% 80%);
-  --selection-color: hsl(0 0% 80%);
-  --secondary-100 : #E9A6A6;
-  --secondary-200 : #E9A6A6;
-  --background-color: #1F1D36;
-  --thead-background-color: hsl(0, 0%, 93%);
-  --separation-color: hsl(0, 0%, 80%);
-  --loading-content-color: hsl(0, 0%, 87%);
-  --title-color: var(--secondary-100);
-  --link-hover-color : white;
-  --button-color: var(--secondary-100);
-  --box-shadow: hsla(0, 0%, 100%, 0.10) 0px 10px 50px 0px;
+@media (prefers-color-scheme: dark) {
+  body {
+    --accent-color-100: white;
+    --accent-color-200: white;
+    --primary-100 : var(--accent-color-100);
+    --primary-200 : var(--accent-color-200);
+    --h1-hover-color: var(--accent-color-100);
+    --selection-color: hsl(0 0% 80%);
+    --secondary-100: hsl(0 0% 80%);
+    --secondary-200: hsl(0 0% 80%);
+    --background-color-200: #44565f;
+    --background-color-100: #37454c;
+    --thead-background-color: hsl(0, 0%, 93%);
+    --separation-color: hsl(0, 0%, 80%);
+    --loading-content-color: hsl(0, 0%, 87%);
+    --title-color: var(--secondary-100);
+    --link-hover-color: white;
+    --box-shadow: hsla(0, 0%, 10%, 0.10) 0px 10px 50px 0px;
+  }
 }
 
 ::selection {
@@ -76,7 +84,7 @@ h2 {
   font-size: 2.2rem;
   font-family: "Roboto", sans-serif;
   font-weight: 100;
-  color: var(--primary-100);
+  color: var(--accent-color);
 }
 h2 a{
     color:inherit;
@@ -129,7 +137,7 @@ a:active, a:focus, a:hover {
   font-size: 1em;
   padding: 5px;
   outline: none;
-  background: var(--background-color);
+  background: var(--background-color-100);
   color: var(--secondary-200);
 }
 .main-header a {
@@ -142,8 +150,8 @@ article {
   margin-bottom: 5rem;
   padding: 0 2rem 2rem 2rem;
   border-radius: 5px;
-  background-color: var(--background-color);
   box-shadow: var(--box-shadow);
+  background: var(--background-color-200);
 }
 article div {
   font-size: 1.6rem;
