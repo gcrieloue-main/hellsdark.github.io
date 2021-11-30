@@ -8,12 +8,41 @@
 body {
   --primary-100 : hsl(206 99% 31%);
   --primary-200 : hsl(210 79% 46%);
-  --secondary-100 : #626262;
+  --h1-hover-color: hsl(206, 99%, 31%);
+  --selection-color: hsl(199, 43%, 87%);
+  --secondary-100 : hsl(0, 0%, 38%);
+  --secondary-200 : hsl(0, 0%, 0%);
+  --background-color: hsl(0, 0%, 100%);
+  --thead-background-color: hsl(0, 0%, 93%);
+  --separation-color: hsl(0, 0%, 80%);
+  --loading-content-color: hsl(0, 0%, 87%);
+  --title-color: black;
+  --link-hover-color : black;
+  --button-color: #666;
+  --box-shadow: rgba(17, 12, 46, 0.10) 0px 10px 50px 0px;
   color: var(--secondary-100);
+  background: var(--background-color);
+}
+
+body.dark-theme {
+  --primary-100 : hsl(0 0% 80%);
+  --primary-200 : hsl(0 0% 80%);
+  --h1-hover-color: hsl(0 0% 80%);
+  --selection-color: hsl(0 0% 80%);
+  --secondary-100 : #E9A6A6;
+  --secondary-200 : #E9A6A6;
+  --background-color: #1F1D36;
+  --thead-background-color: hsl(0, 0%, 93%);
+  --separation-color: hsl(0, 0%, 80%);
+  --loading-content-color: hsl(0, 0%, 87%);
+  --title-color: var(--secondary-100);
+  --link-hover-color : white;
+  --button-color: var(--secondary-100);
+  --box-shadow: hsla(0, 0%, 100%, 0.10) 0px 10px 50px 0px;
 }
 
 ::selection {
-  background: #cfe3ec;
+  background: var(--selection-color);
 }
 
 #app {
@@ -38,7 +67,7 @@ h1 {
   font-size: 3.2rem;
 }
 h1:hover {
-  color: #01579b;
+  color: var(--h1-hover-color);
   transition: color 0.2s linear;
 }
 
@@ -74,6 +103,10 @@ a {
   color: var(--primary-200);
 }
 
+a:active, a:focus, a:hover {
+  color: var(--link-hover-color)
+}
+
 .p-like, blockquote, caption, details, dl, figure, label, ol, p, pre, td, textarea, th, ul {
     line-height: 1.7;
     text-overflow: ellipsis;
@@ -96,9 +129,11 @@ a {
   font-size: 1em;
   padding: 5px;
   outline: none;
+  background: var(--background-color);
+  color: var(--secondary-200);
 }
 .main-header a {
-  color: black;
+  color: var(--title-color);
   text-decoration: none;
 }
 
@@ -107,8 +142,8 @@ article {
   margin-bottom: 5rem;
   padding: 0 2rem 2rem 2rem;
   border-radius: 5px;
-  background-color: white;
-  box-shadow: rgba(17, 12, 46, 0.10) 0px 10px 50px 0px;
+  background-color: var(--background-color);
+  box-shadow: var(--box-shadow);
 }
 article div {
   font-size: 1.6rem;
@@ -129,10 +164,10 @@ article header time {
 article.skeleton {
   height: 200px;
   background-repeat: no-repeat;
-  background-image: linear-gradient(#ddd 40px, transparent 0),
-    linear-gradient(#ddd 40px, transparent 0),
-    linear-gradient(#ddd 40px, transparent 0),
-    linear-gradient(#ddd 40px, transparent 0);
+  background-image: linear-gradient(var(--loading-content-color) 40px, transparent 0),
+    linear-gradient(var(--loading-content-color) 40px, transparent 0),
+    linear-gradient(var(--loading-content-color) 40px, transparent 0),
+    linear-gradient(var(--loading-content-color) 40px, transparent 0);
   background-size: 30% 32px, calc(100% - 1rem) 24px, calc(100% - 1rem) 24px,
     calc(100% - 1rem) 24px;
   background-position: 1rem 1em, 1rem 70px, 1rem 110px, 1rem 150px;
@@ -172,18 +207,18 @@ pre {
 }
 
 thead {
-  backgroun-color: #eee;
+  background-color: var(--thead-background-color);
 }
 
 .btn {
-  color: #666;
+  color: var(--button-color);
   position: relative;
   display: inline-block;
   background: none;
   border: 0;
   margin: 1em;
   padding: 5px;
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid var(--title-color);
   cursor: pointer;
 }
 .btn:after {
@@ -191,13 +226,13 @@ thead {
   left: 50%;
   content: "";
   height: 3px;
-  background: #01579b;
+  background: var(--h1-hover-color);
   transition: all 0.2s linear;
   width: 0;
   bottom: -3px;
 }
 .btn:hover {
-  color: #01579b;
+  color: var(--h1-hover-color);
 }
 .btn:hover:after {
   width: 100%;
@@ -228,7 +263,7 @@ thead {
   list-style-type: none;
   line-height: 3em;
   vertical-align: middle;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid var(--separation-color);
   margin: 0;
   padding: 0;
 }
@@ -236,7 +271,7 @@ thead {
 #search-results .loading {
   height: 22px;
   background-repeat: no-repeat;
-  background-image: linear-gradient(#ddd 40px, transparent 0);
+  background-image: linear-gradient(var(--loading-content-color) 40px, transparent 0);
   background-size: 0% 16px;
   background-position: 1rem 0;
   animation: search-loading 1s infinite;
