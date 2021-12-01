@@ -53,7 +53,7 @@ body {
   body {
     --title-color: var(--secondary-100);
     --link-hover-color: white;
-    --box-shadow: hsla(0, 0%, 10%, 0.30) 0px 10px 50px 0px, inset 1px 1px #666;
+    --box-shadow: hsla(0, 0%, 10%, 0.30) 0px 10px 50px 0px, inset 1px 1px #666, inset -1px -1px #666;
     --article-border: 1px solid #222;
   }
 }
