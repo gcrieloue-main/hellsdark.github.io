@@ -41,7 +41,7 @@
 body {
   --title-color: black;
   --link-hover-color : black;
-  --box-shadow: rgba(17, 12, 46, 0.10) 0px 10px 50px 0px;
+  --box-shadow: hsla(249, 59%, 11%, 0.1) 0px 10px 50px 0px;
   --button-color: var(--secondary-100);
   --accent-color: var(--accent-color-100);
   color: var(--secondary-100);
