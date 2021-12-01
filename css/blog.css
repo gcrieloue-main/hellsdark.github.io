@@ -1,11 +1,4 @@
-@font-face {
-  font-family: "Nickainley-Normal";
-  src: url("../fonts/Nickainley-Normal.otf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-body {
+:root {
   --accent-color-100: hsl(206 99% 31%);
   --accent-color-200: hsl(210 79% 46%);
   --primary-100 : var(--accent-color-100);
@@ -19,17 +12,9 @@ body {
   --thead-background-color: hsl(0, 0%, 93%);
   --separation-color: hsl(0, 0%, 80%);
   --loading-content-color: hsl(0, 0%, 87%);
-  --title-color: black;
-  --link-hover-color : black;
-  --box-shadow: rgba(17, 12, 46, 0.10) 0px 10px 50px 0px;
-  --button-color: var(--secondary-100);
-  --accent-color: var(--accent-color-100);
-  color: var(--secondary-100);
-  background: var(--background-color-100);
 }
-
 @media (prefers-color-scheme: dark) {
-  body {
+  :root {
     --accent-color-100: white;
     --accent-color-200: white;
     --primary-100 : var(--accent-color-100);
@@ -38,14 +23,38 @@ body {
     --selection-color: hsl(0 0% 80%);
     --secondary-100: hsl(0 0% 80%);
     --secondary-200: hsl(0 0% 80%);
-    --background-color-200: #44565f;
-    --background-color-100: #37454c;
+    --background-color-200: hsl(200, 17%, 32%);
+    --background-color-100: hsl(200, 16%, 26%);
     --thead-background-color: hsl(0, 0%, 93%);
     --separation-color: hsl(0, 0%, 80%);
     --loading-content-color: hsl(0, 0%, 87%);
+  }
+}
+
+@font-face {
+  font-family: "Nickainley-Normal";
+  src: url("../fonts/Nickainley-Normal.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  --title-color: black;
+  --link-hover-color : black;
+  --box-shadow: rgba(17, 12, 46, 0.10) 0px 10px 50px 0px;
+  --button-color: var(--secondary-100);
+  --accent-color: var(--accent-color-100);
+  color: var(--secondary-100);
+  background: var(--background-color-100);
+  --article-border: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
     --title-color: var(--secondary-100);
     --link-hover-color: white;
-    --box-shadow: hsla(0, 0%, 10%, 0.10) 0px 10px 50px 0px;
+    --box-shadow: hsla(0, 0%, 10%, 0.30) 0px 10px 50px 0px, inset 1px 1px #666;
+    --article-border: 1px solid #222;
   }
 }
 
@@ -152,6 +161,7 @@ article {
   border-radius: 5px;
   box-shadow: var(--box-shadow);
   background: var(--background-color-200);
+  border: var(--article-border);
 }
 article div {
   font-size: 1.6rem;
