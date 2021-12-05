@@ -15,14 +15,19 @@ body {
   --title-color: var(--grayscale-100);
   --link-hover-color : var(--grayscale-100);
   --box-shadow: hsla(249, 59%, 11%, 0.2) 0px 10px 50px 0px, inset 1px 1px var(--grayscale-400), inset -1px -1px var(--grayscale-400);
+
   --button-color: var(--secondary-100);
+  --button-hover-color: var(--h1-hover-color);
+  --button-border-color : var(--title-color);
+  --button-border-hover-color : var(--h1-hover-color);
+
   --accent-color: var(--accent-color-100);
   color: var(--secondary-100);
   background: var(--background-color-100);
   --article-border: none;
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   body {
     --primary-100 : var(--accent-color-100);
     --primary-200 : var(--accent-color-200);
@@ -213,7 +218,7 @@ thead {
   border: 0;
   margin: 1em;
   padding: 5px;
-  border-bottom: 3px solid var(--title-color);
+  border-bottom: 3px solid var(--button-border-color);
   cursor: pointer;
 }
 .btn:after {
@@ -221,13 +226,13 @@ thead {
   left: 50%;
   content: "";
   height: 3px;
-  background: var(--h1-hover-color);
+  background:  var(--button-border-hover-color);
   transition: all 0.2s linear;
   width: 0;
   bottom: -3px;
 }
 .btn:hover {
-  color: var(--h1-hover-color);
+  color: var(--button-hover-color);
 }
 .btn:hover:after {
   width: 100%;
