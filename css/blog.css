@@ -1,33 +1,44 @@
 :root {
+  --grayscale-100 : hsl(0, 0%, 0%);
+  --grayscale-200: hsl(0, 0%, 38%);
+  --grayscale-300: hsl(0, 0%, 80%);
+  --grayscale-400: hsl(0, 0%, 87%);
+  --grayscale-500: hsl(0, 0%, 93%);
+  --grayscale-900: hsl(0, 0%, 100%);
+
   --accent-color-100: hsl(206 99% 31%);
   --accent-color-200: hsl(210 79% 46%);
+
   --primary-100 : var(--accent-color-100);
   --primary-200 : var(--accent-color-200);
   --h1-hover-color: var(--accent-color-100);
+
+  --secondary-100 : var(--grayscale-200);
+  --secondary-200 : var(--grayscale-100);
   --selection-color: hsl(199, 43%, 87%);
-  --secondary-100 : hsl(0, 0%, 38%);
-  --secondary-200 : hsl(0, 0%, 0%);
-  --background-color-100: hsl(0, 0%, 100%);
-  --background-color-200: hsl(0, 0%, 100%);
-  --thead-background-color: hsl(0, 0%, 93%);
-  --separation-color: hsl(0, 0%, 80%);
-  --loading-content-color: hsl(0, 0%, 87%);
+
+  --background-color-100: var(--grayscale-900);
+  --background-color-200: var(--grayscale-900);
+
+  --thead-background-color: var(--grayscale-500);
+  --separation-color: var(--grayscale-300);
+  --loading-content-color: var(--grayscale-400);
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --accent-color-100: white;
-    --accent-color-200: white;
+    --accent-color-100: var(--grayscale-900);;
+    --accent-color-200: var(--grayscale-900);;
+
     --primary-100 : var(--accent-color-100);
     --primary-200 : var(--accent-color-200);
     --h1-hover-color: var(--accent-color-100);
-    --selection-color: hsl(0 0% 80%);
-    --secondary-100: hsl(0 0% 80%);
-    --secondary-200: hsl(0 0% 80%);
+
+    --secondary-100: var(--grayscale-300);
+    --secondary-200: var(--grayscale-300);
+    --selection-color:var(--grayscale-300);
+
     --background-color-200: hsl(200, 17%, 32%);
     --background-color-100: hsl(200, 16%, 26%);
-    --thead-background-color: hsl(0, 0%, 93%);
-    --separation-color: hsl(0, 0%, 80%);
-    --loading-content-color: hsl(0, 0%, 87%);
   }
 }
 
@@ -39,8 +50,8 @@
 }
 
 body {
-  --title-color: black;
-  --link-hover-color : black;
+  --title-color: var(--grayscale-100);
+  --link-hover-color : var(--grayscale-100);;
   --box-shadow: hsla(249, 59%, 11%, 0.1) 0px 10px 50px 0px;
   --button-color: var(--secondary-100);
   --accent-color: var(--accent-color-100);
@@ -52,7 +63,7 @@ body {
 @media (prefers-color-scheme: dark) {
   body {
     --title-color: var(--secondary-100);
-    --link-hover-color: white;
+    --link-hover-color: var(--grayscale-900);;
     --box-shadow: hsla(0, 0%, 10%, 0.30) 0px 10px 50px 0px, inset 1px 1px #666, inset -1px -1px #666;
     --article-border: 1px solid #222;
   }
@@ -107,7 +118,7 @@ h4, .h4-like {
   margin-block-end: 0.33em;
   color: var(--primary-100);
   font-weight: 500;
-  letter-spacing: 0.5;
+  letter-spacing: 1px;
 }
 
 h5, .h5-like {
@@ -254,7 +265,7 @@ thead {
 }
 .btn:hover:after {
   width: 100%;
-  left: 0px;
+  left: 0;
 }
 
 .no-articles {
@@ -290,7 +301,7 @@ thead {
   height: 22px;
   background-repeat: no-repeat;
   background-image: linear-gradient(var(--loading-content-color) 40px, transparent 0);
-  background-size: 0% 16px;
+  background-size: 0 16px;
   background-position: 1rem 0;
   animation: search-loading 1s infinite;
 }
