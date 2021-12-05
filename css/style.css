@@ -1,8 +1,10 @@
+@import 'theme.css';
+
 body {
-  color: #626262;
-  --primary-100: hsl(210 100% 60%);
-  --primary-200: hsl(210 79% 50%);
-  --primary-300: hsl(210 79% 40%);
+  color: var(--grayscale-200);
+  --primary-100: var(--accent-color-100);
+  --primary-200: var(--accent-color-200);
+  --primary-300: var(--accent-color-300);
 }
 @media (min-width: 1024px) {
   main {

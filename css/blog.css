@@ -1,46 +1,4 @@
-:root {
-  --grayscale-100 : hsl(0, 0%, 0%);
-  --grayscale-200: hsl(0, 0%, 38%);
-  --grayscale-300: hsl(0, 0%, 80%);
-  --grayscale-400: hsl(0, 0%, 87%);
-  --grayscale-500: hsl(0, 0%, 93%);
-  --grayscale-900: hsl(0, 0%, 100%);
-
-  --accent-color-100: hsl(206 99% 31%);
-  --accent-color-200: hsl(210 79% 46%);
-
-  --primary-100 : var(--accent-color-100);
-  --primary-200 : var(--accent-color-200);
-  --h1-hover-color: var(--accent-color-100);
-
-  --secondary-100 : var(--grayscale-200);
-  --secondary-200 : var(--grayscale-100);
-  --selection-color: hsl(199, 43%, 87%);
-
-  --background-color-100: var(--grayscale-900);
-  --background-color-200: var(--grayscale-900);
-
-  --thead-background-color: var(--grayscale-500);
-  --separation-color: var(--grayscale-300);
-  --loading-content-color: var(--grayscale-400);
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --accent-color-100: var(--grayscale-900);;
-    --accent-color-200: var(--grayscale-900);;
-
-    --primary-100 : var(--accent-color-100);
-    --primary-200 : var(--accent-color-200);
-    --h1-hover-color: var(--accent-color-100);
-
-    --secondary-100: var(--grayscale-300);
-    --secondary-200: var(--grayscale-300);
-    --selection-color:var(--grayscale-300);
-
-    --background-color-200: hsl(200, 17%, 32%);
-    --background-color-100: hsl(200, 16%, 26%);
-  }
-}
+@import 'theme.css';
 
 @font-face {
   font-family: "Nickainley-Normal";
@@ -50,9 +8,13 @@
 }
 
 body {
+  --primary-100 : var(--accent-color-200);
+  --primary-200 : var(--accent-color-300);
+  --h1-hover-color: var(--accent-color-200);
+
   --title-color: var(--grayscale-100);
-  --link-hover-color : var(--grayscale-100);;
-  --box-shadow: hsla(249, 59%, 11%, 0.1) 0px 10px 50px 0px;
+  --link-hover-color : var(--grayscale-100);
+  --box-shadow: hsla(249, 59%, 11%, 0.2) 0px 10px 50px 0px, inset 1px 1px var(--grayscale-400), inset -1px -1px var(--grayscale-400);
   --button-color: var(--secondary-100);
   --accent-color: var(--accent-color-100);
   color: var(--secondary-100);
@@ -60,10 +22,14 @@ body {
   --article-border: none;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   body {
+    --primary-100 : var(--accent-color-100);
+    --primary-200 : var(--accent-color-200);
+    --h1-hover-color: var(--accent-color-100);
+
     --title-color: var(--secondary-100);
-    --link-hover-color: var(--grayscale-900);;
+    --link-hover-color: var(--grayscale-900);
     --box-shadow: hsla(0, 0%, 10%, 0.30) 0px 10px 50px 0px, inset 1px 1px #666, inset -1px -1px #666;
     --article-border: 1px solid #222;
   }
