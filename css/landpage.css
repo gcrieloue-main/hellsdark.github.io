@@ -1,11 +1,9 @@
 @import 'theme.css';
 
 :root {
-  --footer-color: #3e2723;
-  --link-color: #333;
+  --footer-color: hsl(9, 28%, 19%);
+  --link-color: hsl(0, 0%, 20%);
   --link-hover-color: black;
-  --link-background-color: #eee;
-  --link-border-color: #ddd;
 }
 
 @font-face {
