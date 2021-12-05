@@ -20,6 +20,8 @@
   --thead-background-color: var(--grayscale-500);
   --separation-color: var(--grayscale-300);
   --loading-content-color: var(--grayscale-400);
+
+  --box-shadow: hsla(249, 59%, 11%, 0.2) 0px 10px 50px 0px, inset 1px 1px var(--grayscale-400), inset -1px -1px var(--grayscale-400);
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -32,5 +34,23 @@
 
     --background-color-200: hsl(200, 17%, 32%);
     --background-color-100: hsl(200, 16%, 26%);
+
+    --box-shadow: hsla(0, 0%, 10%, 0.30) 0px 10px 50px 0px, inset 1px 1px #666, inset -1px -1px #666;
   }
 }
+@media (prefers-color-scheme: dark) {
+  .dark-theme-2 {
+    --accent-color-100: var(--grayscale-900);
+    --accent-color-200: var(--grayscale-900);
+
+    --secondary-100: var(--grayscale-300);
+    --secondary-200: var(--grayscale-300);
+    --selection-color: hsl(0, 0%, 15%);
+
+    --background-color-200: hsl(218, 13%, 12%);
+    --background-color-100: hsl(257, 13%, 10%);
+
+    --box-shadow: hsla(0, 0%, 3%, 0.3) 0px 0px 15px 0px, inset 1px 1px #333, inset -1px -1px #333
+  }
+}
+
