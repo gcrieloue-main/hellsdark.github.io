@@ -5,12 +5,17 @@ body {
   --primary-100: var(--accent-color-100);
   --primary-200: var(--accent-color-200);
   --primary-300: var(--accent-color-300);
+  --link-color: var(--primary-200);
+  --link-hover-color: var(--grayscale-100);
 }
 @media (prefers-color-scheme: dark) {
   body {
     --primary-100 : var(--accent-color-100);
     --primary-200 : var(--accent-color-200);
     --primary-300: var(--accent-color-200);
+
+    --link-color: var(--primary-200);
+    --link-hover-color: var(--grayscale-400);
 
     color: var(--secondary-100);
     background: var(--background-color-100);
@@ -55,7 +60,10 @@ h4:before {
   padding-right: 5px;
 }
 a {
-  color: var(--primary-200);
+  color: var(--link-color);
+}
+a:hover {
+  color: var(--link-hover-color);
 }
 article {
   margin-bottom: 1em;
