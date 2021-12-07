@@ -128,7 +128,12 @@ a:active, a:focus, a:hover {
   outline: none;
   background: var(--background-color-100);
   color: var(--secondary-200);
+  transition: all 0.2s linear;
 }
+.main-header input:focus {
+  border-bottom: 2px solid var(--h1-hover-color);
+}
+
 .main-header a {
   color: var(--title-color);
   text-decoration: none;
