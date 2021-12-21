@@ -50,7 +50,7 @@
     --background-color-200: hsl(218, 13%, 12%);
     --background-color-100: hsl(257, 13%, 10%);
 
-    --box-shadow: hsla(0, 0%, 3%, 0.3) 0px 0px 15px 0px, inset 1px 1px #333, inset -1px -1px #333
+    --box-shadow: hsla(0, 0%, 3%, 0.3) 0px 0px 15px 0px, inset 1px 1px hsla(255 100% 100% /  0.15), inset -1px -1px hsla(255 100% 100% /  0.15)
   }
 }
 
