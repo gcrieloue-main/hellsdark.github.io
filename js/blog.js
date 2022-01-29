@@ -25,7 +25,7 @@ const Articles = {
       <div v-html="content.fields.content"></div>
     </article>
     <p class="txtcenter">
-      <button class="btn" v-on:click="previousPage" v-cloak v-if="page>1">Articles suivants</button>
+      <button class="btn" v-on:click="previousPage" v-cloak v-if="page > 1">Articles suivants</button>
       <button class="btn" v-cloak v-on:click="nextPage" v-if="contents.length == nbArticles">Articles précédents</button>
     </p>
   </div>`,
@@ -96,6 +96,7 @@ const Article = {
             Api.getArticle(this.$route.params.id).then((response) => {
                 this.content = response
             })
+            .catch(() => router.push({path: `/articles/page/1`}))
         },
         goToList() {
             router.push({path: '/articles'})

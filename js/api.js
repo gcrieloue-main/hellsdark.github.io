@@ -2,9 +2,7 @@ import * as showdown from './showdown.min.js'
 import * as contentful from 'contentful'
 
 const client = contentful.createClient({
-  // This is the space ID. A space is like a project folder in Contentful terms
   space: 'oamir411dfuu',
-  // This is the access token for this space. Normally you get both ID and the token in the Contentful web app
   accessToken:
     'fe844e41216f12522cc40b8a179e7c81c8a0f17b797503155ba949afbb6aca96',
 })
@@ -24,7 +22,7 @@ export function getArticles(page, nbArticles) {
       skip: (page - 1) * nbArticles,
       limit: nbArticles,
     })
-    .then((articles) => articles.items.map(processArticle))
+    .then(({items}) => items.map(processArticle))
     .catch((error) => {
       console.error(error)
     })
@@ -51,6 +49,7 @@ export function getArticle(slug) {
       .then(processArticle)
       .catch((error) => {
         console.error(error)
+        throw error
       })
   )
 }
@@ -64,7 +63,7 @@ export function searchArticles(text) {
       limit: nbArticles,
       'fields.content[match]': text,
     })
-    .then((response) => response.items.map(processArticle))
+    .then(({items}) => items.map(processArticle))
     .catch((error) => {
       console.error(error)
     })
@@ -104,8 +103,8 @@ export function getWorkExperiences() {
       content_type: 'workExperience',
       order: '-fields.periodBegin',
     })
-    .then((response) =>
-      response.items.map(function (element) {
+    .then(({items}) =>
+      items.map(function (element) {
         const begin = new Date(element.fields.periodBegin)
         const end = new Date(element.fields.periodEnd)
         const beginDate = formatDate(begin)
@@ -129,8 +128,8 @@ export function getCvParagraphs() {
       content_type: 'paragraph',
       order: 'sys.createdAt',
     })
-    .then((response) =>
-      response.items.map((element) => {
+    .then(({items}) =>
+      items.map((element) => {
         element.fields.text = converter.makeHtml(element.fields.text)
         return element
       })
