@@ -180,6 +180,23 @@ const SearchInput = {
     },
 }
 
+const ThemeToggle = {
+     template: `<label class="switch" v-bind:title="checked">
+         <input type="checkbox" v-model="checked" v-on:change="toggle()">
+        <span class="slider round"></span>
+     </label>`,
+    created: function () {
+        this.checked = !(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        this.toggle();
+    },
+    methods: {
+        toggle: function () {
+            document.documentElement.classList.add(this.checked ? 'light': 'dark')
+            document.documentElement.classList.remove(this.checked ? 'dark': 'light')
+        }
+    },
+}
+
 const routes = [
     {name: 'Articles', path: '/articles', component: Articles},
     {name: 'ArticlesPage', path: '/articles/page/:page', component: Articles},
@@ -221,5 +238,6 @@ const app = new Vue({
         article: Article,
         search: Search,
         'search-input': SearchInput,
+        'theme-toggle': ThemeToggle,
     },
 })

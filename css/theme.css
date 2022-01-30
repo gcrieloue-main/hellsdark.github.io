@@ -1,5 +1,6 @@
-:root {
-  --grayscale-100 : hsl(0, 0%, 0%);
+:root,
+:root.light {
+  --grayscale-100: hsl(0, 0%, 0%);
   --grayscale-200: hsl(0, 0%, 38%);
   --grayscale-300: hsl(0, 0%, 80%);
   --grayscale-400: hsl(0, 0%, 87%);
@@ -10,8 +11,8 @@
   --accent-color-200: hsl(210 79% 50%);
   --accent-color-300: hsl(210 79% 40%);
 
-  --secondary-100 : var(--grayscale-200);
-  --secondary-200 : var(--grayscale-100);
+  --secondary-100: var(--grayscale-200);
+  --secondary-200: var(--grayscale-100);
   --selection-color: hsl(199, 43%, 87%);
 
   --background-color-100: var(--grayscale-900);
@@ -21,7 +22,8 @@
   --separation-color: var(--grayscale-300);
   --loading-content-color: var(--grayscale-400);
 
-  --box-shadow: hsla(249, 59%, 11%, 0.2) 0px 10px 50px 0px, inset 1px 1px var(--grayscale-400), inset -1px -1px var(--grayscale-400);
+  --box-shadow: hsla(249, 59%, 11%, 0.2) 0px 10px 50px 0px,
+    inset 1px 1px var(--grayscale-400), inset -1px -1px var(--grayscale-400);
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -35,22 +37,21 @@
     --background-color-200: hsl(200, 17%, 32%);
     --background-color-100: hsl(200, 16%, 26%);
 
-    --box-shadow: hsla(0, 0%, 10%, 0.30) 0px 10px 50px 0px, inset 1px 1px #666, inset -1px -1px #666;
+    --box-shadow: hsla(0, 0%, 10%, 0.3) 0px 10px 50px 0px, inset 1px 1px #666,
+      inset -1px -1px #666;
   }
 }
-@media (prefers-color-scheme: dark) {
-  .dark-theme-2 {
-    --accent-color-100: var(--grayscale-900);
-    --accent-color-200: var(--grayscale-900);
+:root.dark {
+  --accent-color-100: var(--grayscale-900);
+  --accent-color-200: var(--grayscale-900);
 
-    --secondary-100: var(--grayscale-300);
-    --secondary-200: var(--grayscale-300);
-    --selection-color: hsl(0, 0%, 15%);
+  --secondary-100: var(--grayscale-300);
+  --secondary-200: var(--grayscale-300);
+  --selection-color: hsl(0, 0%, 15%);
 
-    --background-color-200: hsl(218, 13%, 12%);
-    --background-color-100: hsl(257, 13%, 10%);
+  --background-color-200: hsl(200, 17%, 32%);
+  --background-color-100: hsl(200, 16%, 26%);
 
-    --box-shadow: hsla(0, 0%, 3%, 0.3) 0px 0px 15px 0px, inset 1px 1px hsla(255 100% 100% /  0.15), inset -1px -1px hsla(255 100% 100% /  0.15)
-  }
+  --box-shadow: hsla(0, 0%, 10%, 0.3) 0px 10px 50px 0px, inset 1px 1px #666,
+    inset -1px -1px #666;
 }
-
