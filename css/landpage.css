@@ -12,7 +12,8 @@
   font-weight: normal;
   font-style: normal;
 }
-body {
+:root body,
+:root.light body {
   font-family: 'Open Sans', sans-serif;
 
   --button-color: var(--secondary-100);
@@ -34,6 +35,19 @@ body {
     --button-border-color: var(--grayscale-200);
     --button-border-hover-color: var(--grayscale-900);
   }
+}
+
+:root.dark body {
+  color: var(--secondary-100);
+  background: var(--background-color-100);
+  --footer-color: var(--secondary-100);
+  --link-color: var(--secondary-100);
+  --link-hover-color: var(--grayscale-900);
+
+  --button-color: var(--secondary-100);
+  --button-hover-color: var(--h1-hover-color);
+  --button-border-color: var(--grayscale-200);
+  --button-border-hover-color: var(--grayscale-900);
 }
 
 main {

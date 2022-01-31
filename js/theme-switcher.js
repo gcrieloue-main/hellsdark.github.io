@@ -10,10 +10,12 @@ export const ThemeToggle = {
     }
   },
   created: function () {
-    this.checked = !(
-      window.matchMedia &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches
-    )
+    this.checked =
+      localStorage.getItem('theme') === 'light' ||
+      !(
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      )
     this.toggle()
   },
   methods: {
@@ -21,6 +23,7 @@ export const ThemeToggle = {
       document.documentElement.classList.add(this.checked ? 'light' : 'dark')
       document.documentElement.classList.remove(this.checked ? 'dark' : 'light')
       this.title = 'Activer le thème ' + (this.checked ? 'sombre' : 'clair')
+      localStorage.setItem('theme', this.checked ? 'light' : 'dark')
     },
   },
 }
