@@ -160,7 +160,7 @@ ul {
   outline: none;
   background: var(--background-color-100);
   color: var(--secondary-200);
-  transition: all 0.2s linear;
+  transition: border 0.2s linear;
 }
 .main-header input:focus {
   border-bottom: 2px solid var(--h1-hover-color);
