@@ -7,18 +7,18 @@
 }
 
 @font-face {
-  font-family: "Nickainley-Normal";
-  src: url("../fonts/Nickainley-Normal.otf") format("truetype");
+  font-family: 'Nickainley-Normal';
+  src: url('../fonts/Nickainley-Normal.otf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 
   --button-color: var(--secondary-100);
   --button-hover-color: var(--h1-hover-color);
-  --button-border-color : gray;
-  --button-border-hover-color : black;
+  --button-border-color: gray;
+  --button-border-hover-color: black;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -32,7 +32,7 @@ body {
     --button-color: var(--secondary-100);
     --button-hover-color: var(--h1-hover-color);
     --button-border-color: var(--grayscale-200);
-    --button-border-hover-color : var(--grayscale-900);
+    --button-border-hover-color: var(--grayscale-900);
   }
 }
 
@@ -67,7 +67,7 @@ div#content {
 }
 
 h1 {
-  font-family: "Nickainley-Normal", Arial, Helvetica, sans-serif;
+  font-family: 'Nickainley-Normal', Arial, Helvetica, sans-serif;
   font-size: 3.2rem;
 }
 h1,
@@ -75,11 +75,22 @@ footer {
   text-align: center;
 }
 footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: var(--footer-color);
   margin: 1rem 0;
 }
 footer i {
   margin-right: 0.5rem;
+}
+
+.switch-container {
+  margin-right: 1.5rem;
+  align-items: flex-end;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .illustration {
@@ -125,8 +136,21 @@ ul li a i {
   text-decoration: none;
 }
 
-.p-like, blockquote, caption, details, dl, figure, label, ol, p, pre, td, textarea, th, ul {
-    line-height: 1.7;
+.p-like,
+blockquote,
+caption,
+details,
+dl,
+figure,
+label,
+ol,
+p,
+pre,
+td,
+textarea,
+th,
+ul {
+  line-height: 1.7;
 }
 
 #content {
@@ -175,9 +199,9 @@ ul li a i {
 .btn:after {
   position: absolute;
   left: 50%;
-  content: "";
+  content: '';
   height: 3px;
-  background:  var(--button-border-hover-color);
+  background: var(--button-border-hover-color);
   transition: all 0.2s linear;
   width: 0;
   bottom: -3px;

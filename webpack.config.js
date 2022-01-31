@@ -4,6 +4,7 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 const config = {
   entry: {
+    index: "./js/index.js",
     blog: "./js/blog.js",
     cv: "./js/cv.js",
   },
