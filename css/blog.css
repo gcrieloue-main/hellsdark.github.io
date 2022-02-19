@@ -14,6 +14,7 @@
   --h1-hover-color: var(--accent-color-200);
 
   --title-color: var(--grayscale-100);
+  --title-color: var(--secondary-100);
   --link-hover-color: var(--grayscale-100);
 
   --button-color: var(--secondary-100);
@@ -34,7 +35,8 @@
     --h1-hover-color: var(--accent-color-100);
 
     --title-color: var(--secondary-100);
-    --link-hover-color: var(--grayscale-900);
+    --link-color: var(--secondary-100);
+    --link-hover-color: var(--primary-100);
     --article-border: 1px solid #111;
   }
 }
@@ -45,7 +47,8 @@
   --h1-hover-color: var(--accent-color-100);
 
   --title-color: var(--secondary-100);
-  --link-hover-color: var(--grayscale-900);
+  --link-color: var(--secondary-100);
+  --link-hover-color: var(--primary-100);
   --article-border: 1px solid #111;
 }
 
@@ -97,7 +100,7 @@ h5,
 }
 
 a {
-  color: var(--primary-200);
+  color: var(--link-color);
 }
 
 a:active,
