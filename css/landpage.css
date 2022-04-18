@@ -119,7 +119,7 @@ footer i {
 a {
   color: var(--link-color);
 }
-a:hover {
+a:hover, a:active {
   color: var(--link-hover-color);
 }
 
