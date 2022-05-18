@@ -54,6 +54,7 @@ const Articles = {
       router.push({ path: `/article/${content.fields.slug || content.sys.id}` })
     },
     getContent(page) {
+      this.contents = []
       this.isLoading = true
       Api.getArticles(page, this.nbArticles).then((response) => {
         this.isLoading = false
