@@ -1,5 +1,10 @@
 @import 'theme.css';
 
+html,
+body {
+  height: 100%;
+}
+
 :root {
   --footer-color: hsl(9, 28%, 19%);
   --link-color: hsl(0, 0%, 20%);
@@ -14,7 +19,6 @@
 }
 :root body,
 :root.light body {
-  height: 100%;
   font-family: 'Open Sans', sans-serif;
   --link-hover-color: var(--secondary-100);
 
