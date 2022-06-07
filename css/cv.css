@@ -116,6 +116,10 @@ article div {
   margin-right: 12px;
 }
 
+article.workExperience {
+    margin-bottom: 1.5em;
+}
+
 #languages ul {
   list-style-type: none;
   padding-left: 0.5em;
