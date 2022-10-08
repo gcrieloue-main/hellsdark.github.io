@@ -1,8 +1,10 @@
 import Vue from './vue.min.js'
 import * as Api from './api.js'
+import { themeToggleMixin } from './theme-switcher.js'
 
 const cv = new Vue({
   el: '#cv',
+  mixins: [themeToggleMixin],
   data: {
     workExperiences: [],
     paragraphs: {},
