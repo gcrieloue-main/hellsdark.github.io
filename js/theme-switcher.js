@@ -5,7 +5,6 @@ export const themeToggleMixin = {
     }
   },
   created: function () {
-    console.log('mixin called')
     this.checked =
       localStorage.getItem('theme') === 'light' ||
       !(
