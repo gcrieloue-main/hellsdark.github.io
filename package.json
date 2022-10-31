@@ -2,9 +2,8 @@
   "name": "gilles-crieloue-website",
   "version": "1.0.0",
   "scripts": {
-    "build": "webpack --config webpack.config.js",
-    "watch": "webpack --config webpack.config.js --watch",
-    "start": "webpack-dev-server --hot"
+    "build": "webpack --mode production --config webpack.config.js",
+    "start": "webpack serve --open --mode development --env development"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",

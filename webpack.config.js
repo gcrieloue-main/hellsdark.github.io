@@ -11,6 +11,7 @@ const config = {
     path: path.resolve(__dirname, "dist"),
     filename: "./[name].bundle.js",
   },
+  target : 'web',
   module: {
     rules: [
       {
@@ -31,6 +32,7 @@ const config = {
     },
     compress: true,
     port: 9000,
+    hot: true
   },
 };
 
