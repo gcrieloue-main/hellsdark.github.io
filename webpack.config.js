@@ -27,12 +27,11 @@ const config = {
     ],
   },
   devServer: {
-    static: {
-      directory: path.join(__dirname, '.'),
+    static:  { 
+      directory: path.resolve(__dirname, '.')
     },
     compress: true,
-    port: 9000,
-    hot: true
+    port: 9000
   },
 };
 

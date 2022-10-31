@@ -1,13 +1,9 @@
-import Vue from './vue.min'
-import VueRouter from './vue-router'
+import { createApp, ref, watch } from 'vue/dist/vue.esm-bundler'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import Prism from './prism'
 import * as Api from './api'
 import debounce from 'lodash.debounce'
 import { ThemeToggle } from './theme-switcher'
-
-Vue.use(VueRouter)
-
-const bus = new Vue()
 
 const Articles = {
   router,
@@ -107,6 +103,8 @@ const Article = {
   },
 }
 
+const searchInput = ref('')
+
 const Search = {
   router,
   template: `<div id="search-results">
@@ -127,8 +125,8 @@ const Search = {
     }
   },
   created: function () {
-    bus.$on(
-      'search',
+    watch(
+      searchInput,
       debounce((text) => {
         if (text.length > 2) {
           this.getContent(text)
@@ -140,7 +138,7 @@ const Search = {
     )
   },
   beforeRouteLeave: function (to, from, next) {
-    bus.$emit('clearSearch')
+    searchInput.value = ''
     next()
   },
   methods: {
@@ -165,15 +163,12 @@ const SearchInput = {
     <p><input ref="search" type="text" placeholder="Rechercher…" v-bind:value="value" v-on:input="search($event.target.value)" /></p>
   </form>`,
   props: ['value'],
-  created: function () {
-    bus.$on('clearSearch', () => {
-      this.value = ''
-    })
-  },
+  created: function () {},
   methods: {
     search: function (value) {
       router.push({ path: `/search` })
-      bus.$emit('search', value)
+      console.log(searchInput)
+      searchInput.value = value
     },
     onSubmit: function () {
       // unfocus the field on submit
@@ -188,10 +183,11 @@ const routes = [
   { name: 'ArticlesPage', path: '/articles/page/:page', component: Articles },
   { name: 'Article', path: '/article/:id', component: Article },
   { name: 'Search', path: '/search', component: Search },
-  { path: '*', redirect: '/articles' },
+  { path: '/:pathMatch(.*)', redirect: '/articles' },
 ]
 
-const router = new VueRouter({
+const router = createRouter({
+  history: createWebHashHistory(),
   routes,
   scrollBehavior(to, from, savedPosition) {
     return { x: 0, y: 0 }
@@ -216,16 +212,11 @@ router.beforeEach((to, from, next) => {
   next()
 })
 
-Vue.use(router)
-
-const app = new Vue({
-  el: '#app',
-  router,
-  components: {
-    articles: Articles,
-    article: Article,
-    search: Search,
-    'search-input': SearchInput,
-    'theme-toggle': ThemeToggle,
-  },
-})
+const app = createApp({})
+  .component('articles', Articles)
+  .component('article', Article)
+  .component('search', Search)
+  .component('search-input', SearchInput)
+  .component('theme-toggle', ThemeToggle)
+  .use(router)
+  .mount('#app')

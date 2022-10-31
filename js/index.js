@@ -1,9 +1,6 @@
-import Vue from './vue.min.js'
+import { createApp } from 'vue/dist/vue.esm-bundler'
 import { ThemeToggle } from './theme-switcher'
 
-const app = new Vue({
-  el: '#landing',
-  components: {
-    'theme-toggle': ThemeToggle,
-  },
-})
+const app = createApp({})
+.component('theme-toggle', ThemeToggle)
+  .mount('#landing')

@@ -4,7 +4,7 @@
   "scripts": {
     "build": "webpack --mode production --config webpack.config.js",
     "watch": "webpack --mode development --config webpack.config.js --watch",
-    "start": "webpack serve --open --mode development --env development"
+    "start": "webpack serve --hot --open --mode development --env development"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
@@ -18,6 +18,8 @@
   },
   "dependencies": {
     "contentful": "^9.2.9",
-    "lodash.debounce": "^4.0.8"
+    "lodash.debounce": "^4.0.8",
+    "vue": "^3.2.41",
+    "vue-router": "^4.1.6"
   }
 }
