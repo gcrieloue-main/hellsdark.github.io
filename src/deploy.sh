@@ -9,7 +9,7 @@ npm run build
 # navigate into the build output directory
 cp -r dist/** ..
 
-cd ../dist
+cd ../
 git add -A
 git commit -m 'deploy'
 git push origin master
