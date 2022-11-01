@@ -20,7 +20,7 @@ const cv = createApp({
       Api.getCvParagraphs().then((response) => (this.paragraphs = response))
     },
   },
+  mixins:  [themeToggleMixin]
 }
 )
-.mixin( [themeToggleMixin])
 .mount('#cv')
