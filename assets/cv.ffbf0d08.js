@@ -1,1 +1,0 @@
-import{c as t,t as a}from"./theme-switcher.5332e7c5.js";/* empty css               */import{g as r,a as s}from"./api.ee4442a5.js";t({data:()=>({workExperiences:[],paragraphs:{}}),created:function(){this.getData()},methods:{getData(){r().then(e=>this.workExperiences=e),s().then(e=>this.paragraphs=e)}}}).mixin([a]).mount("#cv");

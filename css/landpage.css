@@ -1,0 +1,248 @@
+@import 'theme.css';
+
+html,
+body {
+  height: 100%;
+}
+
+:root {
+  --footer-color: hsl(9, 28%, 19%);
+  --link-color: hsl(0, 0%, 20%);
+  --link-hover-color: black;
+}
+
+@font-face {
+  font-family: 'Nickainley-Normal';
+  src: url('../fonts/Nickainley-Normal.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+:root body,
+:root.light body {
+  font-family: 'Open Sans', sans-serif;
+  --link-hover-color: var(--secondary-100);
+
+  --button-color: var(--secondary-100);
+  --button-hover-color: var(--h1-hover-color);
+  --button-border-color: gray;
+  --button-border-hover-color: black;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: var(--secondary-100);
+    background: var(--background-color-100);
+    --footer-color: var(--secondary-100);
+    --link-color: var(--secondary-100);
+    --link-hover-color: var(--grayscale-900);
+
+    --button-color: var(--secondary-100);
+    --button-hover-color: var(--h1-hover-color);
+    --button-border-color: var(--grayscale-200);
+    --button-border-hover-color: var(--grayscale-900);
+  }
+}
+
+:root.dark body {
+  color: var(--secondary-100);
+  background: var(--background-color-100);
+  --footer-color: var(--secondary-100);
+  --link-color: var(--secondary-100);
+  --link-hover-color: var(--grayscale-900);
+
+  --button-color: var(--secondary-100);
+  --button-hover-color: var(--h1-hover-color);
+  --button-border-color: var(--grayscale-200);
+  --button-border-hover-color: var(--grayscale-900);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  height: 100%;
+}
+main div div {
+  margin: 0 auto;
+  max-width: 750px;
+}
+
+#landing {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+div#content,
+div#availability {
+  text-align: left;
+  padding: 0 3rem;
+}
+div#availability {
+  border-radius: 5px;
+}
+div#content {
+  margin: auto;
+}
+
+h1 {
+  font-family: 'Nickainley-Normal', Arial, Helvetica, sans-serif;
+  font-size: 3.2rem;
+}
+h1,
+footer {
+  text-align: center;
+}
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--footer-color);
+  margin: 1rem 0;
+}
+footer i {
+  margin-right: 0.5rem;
+}
+
+.switch-container {
+  margin-left: 1rem;
+  align-items: flex-end;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.illustration {
+  text-align: center;
+  margin: 2rem 1rem;
+}
+.illustration img {
+  max-height: 200px;
+}
+
+a {
+  color: var(--link-color);
+}
+a:hover,
+a:active,
+a:focus {
+  color: var(--link-hover-color);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+ul li {
+  margin: 0.5rem;
+}
+ul li a {
+  padding: 0.5rem;
+  text-decoration: none;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  border: 1px solid transparent;
+}
+ul li a:hover {
+  animation: animate-links 0.5s ease-in-out forwards;
+}
+ul li a span {
+  font-size: 1.4rem;
+}
+ul li a i {
+  margin-right: 1rem;
+  text-decoration: none;
+}
+
+.p-like,
+blockquote,
+caption,
+details,
+dl,
+figure,
+label,
+ol,
+p,
+pre,
+td,
+textarea,
+th,
+ul {
+  line-height: 1.7;
+}
+
+#content {
+  animation: slide-up 0.5s ease-in-out forwards;
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes move-up {
+  0% {
+    position: relative;
+    top: 50px;
+  }
+  100% {
+    position: relative;
+    top: 0;
+  }
+}
+
+.cv-link {
+  animation: move-up 0.5s ease-in-out forwards;
+}
+.cv-link a {
+  text-decoration: none;
+}
+
+.btn {
+  text-decoration: none;
+  color: var(--button-color);
+  position: relative;
+  display: inline-block;
+  background: none;
+  border: 0;
+  margin: 1em;
+  padding: 5px;
+  border-bottom: 3px solid var(--button-border-color);
+  cursor: pointer;
+}
+.btn:after {
+  position: absolute;
+  left: 50%;
+  content: '';
+  height: 3px;
+  background: var(--button-border-hover-color);
+  transition: all 0.2s linear;
+  width: 0;
+  bottom: -3px;
+}
+.btn:hover {
+  color: var(--button-hover-color);
+}
+.btn:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+@keyframes ripple {
+  from {
+    opacity: 1;
+    transform: scale(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(10);
+  }
+}

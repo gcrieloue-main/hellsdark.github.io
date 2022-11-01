@@ -1,0 +1,25 @@
+{
+  "name": "gilles-crieloue-website",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "webpack --mode production --config webpack.config.js",
+    "watch": "webpack --mode development --config webpack.config.js --watch",
+    "start": "webpack serve --hot --open --mode development --env development"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@babel/preset-env": "^7.19.3",
+    "babel-loader": "^8.2.5",
+    "lite-server": "^2.6.1",
+    "prettier": "^2.7.1",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "dependencies": {
+    "contentful": "^9.2.9",
+    "lodash.debounce": "^4.0.8",
+    "vue": "^3.2.41",
+    "vue-router": "^4.1.6"
+  }
+}
