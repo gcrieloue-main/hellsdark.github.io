@@ -1,4 +1,4 @@
-@import 'theme.css';
+@import '../root-css/theme.css';
 
 @font-face {
   font-family: 'Nickainley-Normal';

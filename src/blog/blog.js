@@ -1,9 +1,9 @@
 import { createApp, ref, watch } from 'vue/dist/vue.esm-bundler'
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Prism from './prism'
-import * as Api from './api'
+import Prism from '../root-js/prism'
+import * as Api from '../root-js/api'
 import debounce from 'lodash.debounce'
-import { ThemeToggle } from './theme-switcher'
+import { ThemeToggle } from '../root-js/theme-switcher'
 
 
 const Articles = {
