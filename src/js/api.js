@@ -1,4 +1,4 @@
-import * as showdown from './showdown.min.js'
+import * as showdown from 'showdown'
 import * as contentful from 'contentful'
 
 const client = contentful.createClient({

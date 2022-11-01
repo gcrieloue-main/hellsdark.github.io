@@ -5,8 +5,8 @@ import * as Api from './api'
 import debounce from 'lodash.debounce'
 import { ThemeToggle } from './theme-switcher'
 
+
 const Articles = {
-  router,
   template: `<div>
     <p v-if="!isLoading && !contents.length" class="no-articles" v-cloak>That's all folks !</p>
     <div v-if="isLoading">
@@ -69,7 +69,6 @@ const Articles = {
 }
 
 const Article = {
-  router,
   template: `<div>
     <article v-cloak>
       <header>
@@ -106,7 +105,6 @@ const Article = {
 const searchInput = ref('')
 
 const Search = {
-  router,
   template: `<div id="search-results">
     <p v-if="isLoading" v-cloak class="loading"></p>
     <p v-if="!isLoading && searchEmpty" v-cloak>Que cherchez vous ?</p>
@@ -158,7 +156,6 @@ const Search = {
 }
 
 const SearchInput = {
-  router,
   template: `<form v-on:submit.prevent="onSubmit">
     <p><input ref="search" type="text" placeholder="Rechercher…" v-bind:value="value" v-on:input="search($event.target.value)" /></p>
   </form>`,
@@ -211,6 +208,7 @@ router.beforeEach((to, from, next) => {
   }
   next()
 })
+
 
 const app = createApp({})
   .component('articles', Articles)
