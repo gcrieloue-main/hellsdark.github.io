@@ -10,5 +10,16 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./', import.meta.url))
     }
+  },build:
+  {
+    rollupOptions: {
+      input: {
+        blog: fileURLToPath(new URL('./blog.html', import.meta.url)),
+        // cv: fileURLToPath(new URL('./cv.html', import.meta.url)),
+        index: fileURLToPath(new URL('./index.html', import.meta.url)),
+        // recruit_me: fileURLToPath(new URL('./recruit-me.html', import.meta.url)),
+      },
+    },
   }
+  
 })
