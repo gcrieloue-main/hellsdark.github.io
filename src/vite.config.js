@@ -2,6 +2,8 @@ import { defineConfig } from 'vite'
 import { resolve } from 'path'
 
 // https://vitejs.dev/config/
+
+// Warning ! Build is currently broken, see https://github.com/vitejs/vite/issues/4890
 export default defineConfig({
   build: {
     rollupOptions: {
