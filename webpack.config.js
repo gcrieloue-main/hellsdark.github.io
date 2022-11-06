@@ -1,11 +1,12 @@
 const path = require("path");
 const webpack = require("webpack");
+const { VueLoaderPlugin } = require('vue-loader')
 
-const config = {
+module.exports = {
   entry: {
     index: "./js/index.js",
-    blog: "./js/blog.js",
-    cv: "./js/cv.js",
+    blog: "./blog/blog.js",
+    cv: "./cv/cv.js",
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -24,7 +25,16 @@ const config = {
           },
         },
       },
+        {
+          test: /\.vue$/,
+          loader: 'vue-loader'
+        }
     ],
+  },
+  resolve: {
+    alias: {
+      '@Shared':  path.resolve(__dirname, 'js'),
+    }
   },
   devServer: {
     static:  { 
@@ -33,6 +43,7 @@ const config = {
     compress: true,
     port: 9000
   },
+  plugins: [
+    new VueLoaderPlugin()
+  ]
 };
-
-module.exports = config;

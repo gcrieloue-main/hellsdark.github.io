@@ -1,6 +1,6 @@
 import { createApp } from 'vue/dist/vue.esm-bundler'
-import * as Api from './api.js'
-import { themeToggleMixin } from './theme-switcher.js'
+import * as Api from '@Shared/api.js'
+import { themeToggleMixin } from '@Shared/theme-switcher.js'
 
 const cv = createApp({
   data: () => {
