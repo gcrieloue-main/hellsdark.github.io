@@ -6,6 +6,7 @@ import { resolve } from 'path'
 // Warning ! Build is currently broken, see https://github.com/vitejs/vite/issues/4890
 // https://github.com/vitejs/vite/issues/8992
 // https://github.com/vitejs/vite/issues/6375
+// Follow PR https://github.com/vitejs/vite/pull/9278
 export default defineConfig({
   build: {
     rollupOptions: {
