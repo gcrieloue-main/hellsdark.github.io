@@ -11,11 +11,13 @@ const inputValue = ref('')
 export default {
   watch: {
     inputValue() {
-      this.router.push({ path: `/search` })
-      this.searchStore.search(this.inputValue)
+      if (this.inputValue){
+        this.router.push({ path: `/search` })
+        this.searchStore.search(this.inputValue)
+      }
     },
     'searchStore.value': {
-      handler: function (val, oldVal) {
+      handler: function (val) {
         this.inputValue = val
       },
     },

@@ -3,9 +3,9 @@ import { useRouter, onBeforeRouteLeave } from 'vue-router'
 
 const router = useRouter()
 
-// onBeforeRouteLeave((to, from) => {
-//   searchStore.value.search('')
-// })
+onBeforeRouteLeave((to, from) => {
+  searchStore.value.search('')
+})
 </script>
 
 <script>
