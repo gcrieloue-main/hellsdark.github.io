@@ -3,6 +3,7 @@ import * as Api from '@Shared/api.js'
 import { themeToggleMixin } from '@Shared/theme-switcher.js'
 
 const cv = createApp({
+  mixins: [themeToggleMixin],
   data: () => {
     return {
       workExperiences: [],
@@ -20,7 +21,5 @@ const cv = createApp({
       Api.getCvParagraphs().then((response) => (this.paragraphs = response))
     },
   },
-}
-)
-.mixin( [themeToggleMixin])
+})
 .mount('#cv')
