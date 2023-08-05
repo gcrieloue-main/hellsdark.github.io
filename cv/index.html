@@ -15,33 +15,33 @@
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
     />
   </head>
-  <body>
+  <body id="app">
     <header>
       <h1>Crieloue Gilles</h1>
-      <p>Ingénieur logiciel</p>
+      <p v-cloak>{{ $t("cv.title") }}</p>
     </header>
     <main id="cv">
       <section class="side">
         <article id="about" class="about" v-if="paragraphs[0]">
-          <h2>A propos de moi</h2>
+          <h2 v-cloak>{{ $t("cv.about") }}</h2>
           <div v-cloak v-html="paragraphs[0].fields.text"></div>
         </article>
         <article id="skills" v-if="paragraphs[1]">
-          <h2>Compétences</h2>
+          <h2 v-cloak>{{ $t("cv.skills") }}</h2>
           <div v-cloak v-html="paragraphs[1].fields.text"></div>
         </article>
         <article id="languages" v-if="paragraphs[3]">
-          <h2>Langues</h2>
+          <h2 v-cloak>{{ $t("cv.languages") }}</h2>
           <div v-cloak v-html="paragraphs[3].fields.text"></div>
         </article>
       </section>
       <section id="cv-content">
         <article id="education" v-if="paragraphs[2]">
-          <h2>Formation</h2>
+          <h2>{{ $t("cv.training") }}</h2>
           <div v-cloak v-html="paragraphs[2].fields.text"></div>
         </article>
         <div id="experience">
-          <h2>Mes expériences</h2>
+          <h2 v-cloak>{{ $t("cv.professionalExperience") }}</h2>
           <div id="workExperiences">
             <article
               v-cloak

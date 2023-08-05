@@ -97,11 +97,12 @@ function replaceSmileys(text) {
 const formatDate = (date) =>
   ('0' + (date.getMonth() + 1)).slice(-2) + '/' + date.getFullYear()
 
-export function getWorkExperiences() {
+export function getWorkExperiences(lang) {
   return client
     .getEntries({
       content_type: 'workExperience',
       order: '-fields.periodBegin',
+      locale: lang
     })
     .then(({items}) =>
       items.map(function (element) {
