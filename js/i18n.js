@@ -29,7 +29,7 @@ export const messages = {
     home: {
         hello: 'Hello,',
         p1: 'I am <strong>Gilles CRIELOUE</strong>, Software ingineer.',
-        p2: "I have a master in software architecture, and I have a<strong>13+ years</strong>of experience in software development.",
+        p2: "I have a master in software architecture, and I have a<strong>13+ years</strong> experience in software development.",
         p3: " I have a <strong>Full-Stack</strong> profile with strong experiences <strong>Java/Kotlin</strong> and with <strong>JS Franworks</strong>such as React or Angular.",
         p4: "I also have experienced <strong>mobile technologies (Android)</strong>.",
         interested: 'Interested by my profile ?',
