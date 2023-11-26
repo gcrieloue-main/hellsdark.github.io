@@ -28,24 +28,22 @@
     <div id="landing">
       <main>
         <div id="content">
-          <div class="illustration">
-            <img src="images/illustration01.png" />
-          </div>
           <div>
             <h1 v-cloak>{{ $t("home.hello") }}</h1>
-            <p class="txtcenter mbm" v-html="$t('home.p1')"></p>
+            <p class="mbm" v-html="$t('home.p1')"></p>
             <div class="about-items">
-              <p v-html="$t('home.p2')"></p>
-              <p v-html="$t('home.p3')"></p>
-              <p v-html="$t('home.p4')"></p>
+            <p>
+              <span v-html="$t('home.p2')"></span> <span v-html="$t('home.p3')"></span></span>
+            </p>
             </div>
-            <p class="txtcenter">
-              <span class="cv-link">
+              <p class="cv-link">
                 <a href="/recruit-me" class="btn"
                   >{{ $t("home.interested") }}</a
                 >
-              </span>
-            </p>
+              </p>
+          </div>
+          <div class="illustration">
+            <img src="images/coding.svg" />
           </div>
         </div>
         <footer>
